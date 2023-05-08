@@ -5,12 +5,12 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid rgb(221, 221, 221);
+  padding: 10px 0;
 }
 
-.navbarContainer img{
+.navbarContainer img {
   width: 80px;
   height: 80px;
-  margin-top: 10px;
 }
 
 .navbarlink {
