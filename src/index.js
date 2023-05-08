@@ -5,6 +5,7 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 /* eslint-enable */
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
@@ -14,5 +15,7 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(
-  <App />,
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
 );
