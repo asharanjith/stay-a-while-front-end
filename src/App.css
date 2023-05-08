@@ -5,3 +5,9 @@
   text-align: center;
   height: 100vh;
 }
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+}
