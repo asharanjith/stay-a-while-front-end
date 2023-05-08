@@ -14,4 +14,23 @@ const GetData = createAsyncThunk(DEFAULTDATA, async () => {
   return propertyList;
 });
 
+// create slice...
+const homeSlice = createSlice({
+  name: 'homeStayList',
+  initialState: {
+    listing: [],
+    isFulfilled: false,
+  },
+
+  reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(GetData.fulfilled, (state, action) => {
+      state.isFulfilled = true;
+      state.listing = action.payload;
+    });
+  },
+
+});
+
+export default homeSlice;
 export { GetData };
