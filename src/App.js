@@ -6,8 +6,8 @@ import Home from './components/home/Home';
 import Booking from './components/booking/Booking';
 import Reservation from './components/reservation/Reservation';
 import Detailed from './components/home/detailed/Detailed';
-import AddHotel from './components/add_hotel/AddHotel';
-import DeleteHotel from './components/delete_hotel/DeleteHotel';
+import AddHome from './components/add_home/AddHome';
+import DeleteHome from './components/delete_home/DeleteHome';
 
 function App() {
   return (
@@ -18,8 +18,8 @@ function App() {
         <Route path="/detailed/:id" element={<Detailed />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/reservation" element={<Reservation />} />
-        <Route path="/add" element={<AddHotel />} />
-        <Route path="/delete" element={<DeleteHotel />} />
+        <Route path="/add" element={<AddHome />} />
+        <Route path="/delete" element={<DeleteHome />} />
       </Routes>
     </div>
   );

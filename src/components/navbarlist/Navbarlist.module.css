@@ -7,6 +7,12 @@
   border: 1px solid rgb(221, 221, 221);
 }
 
+.navbarContainer img{
+  width: 80px;
+  height: 80px;
+  margin-top: 10px;
+}
+
 .navbarlink {
   display: flex;
   flex-direction: column;

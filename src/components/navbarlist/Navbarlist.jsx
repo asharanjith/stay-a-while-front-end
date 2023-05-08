@@ -1,11 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './Navbarlist.module.css';
+import logo from '../../assets/images/logo.png';
 
 export default function Navbarlist() {
   return (
     <nav className={style.navbarContainer}>
-      <h1>Logo</h1>
+      <img src={logo} alt="Stay a While" />
       <div className={style.navbarlink}>
         <NavLink
           end
