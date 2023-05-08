@@ -21,7 +21,7 @@ const AddHome = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Submitted');
-    console.log(e);
+    console.log(formInput);
     setformInput(formInputState);
   };
 
