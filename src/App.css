@@ -1,5 +1,13 @@
 .App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   text-align: center;
-  height: 200px;
-  width: 200px;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
 }
