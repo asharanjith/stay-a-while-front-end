@@ -1,30 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { Navigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, Navigate } from 'react-router-dom';
 import style from './Login.module.css';
+import { loginRequest, errorReset } from './loginSlicer';
+import { successReset } from '../signup/signupSlicer';
 
 export default function Login() {
   const [username, setUsername] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [alert, setAlert] = useState(false);
-  const handleSubmit = async () => {
+  const { error, login, loading } = useSelector((state) => state.login);
+  const { success } = useSelector((state) => state.signup);
+  const dispatch = useDispatch();
+
+  const handleSubmit = () => {
     const body = {
       name: username,
     };
-    const response = await fetch('http://localhost:3000/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    });
-    const data = await response.json();
-    if (data.token) {
-      localStorage.setItem('token', data.token);
-      setLoggedIn(true);
-    } else {
-      setAlert(true);
-    }
+    dispatch(loginRequest(body));
   };
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -33,30 +25,60 @@ export default function Login() {
   };
 
   useEffect(() => {
-    setTimeout(() => {
-      setAlert(false);
-    }, 5000);
-  }, [alert]);
+    if (error) {
+      setTimeout(() => {
+        dispatch(errorReset());
+      }, 3000);
+    }
+  }, [error, dispatch]);
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      setLoggedIn(true);
+    if (success) {
+      setTimeout(() => {
+        dispatch(successReset());
+      }, 3000);
     }
-  }, [setLoggedIn]);
+  }, [success, dispatch]);
 
   return (
     <div className={style.loginContainer}>
-      <h1>Login</h1>
-      <input type="text" value={username} onKeyDown={handleKeyDown} onChange={(e) => setUsername(e.target.value)} />
-      <button type="button" onClick={handleSubmit}>Login</button>
-      {loggedIn && <Navigate to="/" />}
-      <AnimatePresence>
-        {alert
+      {success && (
+        <>
+          <motion.div
+            initial={{ opacity: 0, x: '30vw', scale: 0.3 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            exit={{ opacity: 0, x: '-30vw', scale: 0.3 }}
+            transition={{
+              type: 'spring', stiffness: 120,
+            }}
+            className={style.success}
+          >
+            <p>Username create successfully.</p>
+          </motion.div>
+        </>
+      )}
+      {loading
+        ? (
+          <>
+            <div className="loader" />
+            <p>Wait it can take some time...</p>
+          </>
+        ) : (
+          <>
+            <h1>Login</h1>
+            <input type="text" value={username} onKeyDown={handleKeyDown} onChange={(e) => setUsername(e.target.value)} />
+            <button className="btn bg-primary text-light" type="button" onClick={handleSubmit}>Login</button>
+            <div>
+              <p> Not Registered?</p>
+              <Link to="/register">Register Here</Link>
+            </div>
+            <AnimatePresence>
+              {error
       && (
       <motion.div
         initial={{ opacity: 0, x: '30vw', scale: 0.3 }}
         animate={{ opacity: 1, x: 0, scale: 1 }}
-        exit={{ opacity: 0, x: '-50vw', scale: 0.3 }}
+        exit={{ opacity: 0, x: '-30vw', scale: 0.3 }}
         transition={{
           type: 'spring', stiffness: 120,
         }}
@@ -65,7 +87,10 @@ export default function Login() {
         <p>Alert! Invalid username</p>
       </motion.div>
       )}
-      </AnimatePresence>
+            </AnimatePresence>
+          </>
+        )}
+      {login && <Navigate to="/" />}
     </div>
   );
 }
