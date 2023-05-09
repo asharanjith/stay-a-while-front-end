@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid rgb(221, 221, 221);
+  width: 350px;
 }
 
 .navbarContainer img{

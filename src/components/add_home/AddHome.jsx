@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 // import { useDispatch, useSelector } from "react-redux";
+import style from './AddHome.module.css';
+import Images from './Images';
 
 const AddHome = () => {
   const formInputState = {
@@ -9,7 +11,7 @@ const AddHome = () => {
     price: '',
     no_of_rooms: '',
     rating: '',
-    images: '',
+    images: [],
   };
   const [formInput, setformInput] = React.useState(formInputState);
 
@@ -25,94 +27,90 @@ const AddHome = () => {
     setformInput(formInputState);
   };
 
+  const handleAdd = () => {
+    setformInput({ ...formInput, images: [...formInput.images, ''] });
+  };
+
+  const handleRemove = (index) => {
+    const images = [...formInput.images];
+    images.splice(index, 1);
+    setformInput({ ...formInput, images });
+  };
+
+  const handleImage = (e, index) => {
+    const images = [...formInput.images];
+    images[index] = e.target.value;
+    setformInput({ ...formInput, images });
+  };
+
   const addHomeForm = () => (
     <>
-      <h1>Add Home</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={formInput.name}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label htmlFor="location">
-          Address:
-          <input
-            type="text"
-            name="location"
-            value={formInput.location}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label htmlFor="description">
-          Please provide a short description about the property:
-          <input
-            type="text"
-            name="description"
-            value={formInput.description}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label htmlFor="price">
-          Price per day:
-          <input
-            type="number"
-            name="price"
-            value={formInput.price}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label htmlFor="no_of_rooms">
-          Number of rooms:
-          <input
-            type="number"
-            name="no_of_rooms"
-            value={formInput.no_of_rooms}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <label htmlFor="rating">
-          Rating:
-          <select
-            name="rating"
-            onChange={formInput.handleChange}
-            required
-          >
-            <option value="1">1 star</option>
-            <option value="2">2 stars</option>
-            <option value="3">3 stars</option>
-            <option value="4">4 stars</option>
-            <option value="5">5 stars</option>
-          </select>
-        </label>
-        <label htmlFor="images">
-          Images:
-          <input
-            type="file"
-            name="images"
-            value={formInput.images}
-            onChange={handleChange}
-            required
-          />
-        </label>
+      <form onSubmit={handleSubmit} className={style.form_container}>
+        <input
+          type="text"
+          name="name"
+          value={formInput.name}
+          onChange={handleChange}
+          required
+          placeholder="Name of the property"
+        />
+        <input
+          type="text"
+          name="location"
+          value={formInput.location}
+          onChange={handleChange}
+          required
+          placeholder="Location of the property"
+        />
+        <input
+          type="textarea"
+          name="description"
+          value={formInput.description}
+          onChange={handleChange}
+          required
+          placeholder="Description of the property"
+        />
+        <input
+          type="number"
+          name="price"
+          value={formInput.price}
+          onChange={handleChange}
+          required
+          placeholder="Price per day"
+        />
+        <input
+          type="number"
+          name="no_of_rooms"
+          value={formInput.no_of_rooms}
+          onChange={handleChange}
+          required
+          placeholder="Number of rooms"
+        />
+        <select
+          name="rating"
+          onChange={formInput.handleChange}
+          required
+        >
+          <option value="1">1 star</option>
+          <option value="2">2 stars</option>
+          <option value="3">3 stars</option>
+          <option value="4">4 stars</option>
+          <option value="5">5 stars</option>
+        </select>
+        <Images
+          form={formInput}
+          onAdd={handleAdd}
+          onRemove={handleRemove}
+          onChange={handleImage}
+        />
         <input type="submit" value="Submit" />
       </form>
     </>
   );
 
   return (
-    <section id="add_home">
-      <div className="form_container">
-        {addHomeForm()}
-      </div>
+    <section id={style.add_home}>
+      {addHomeForm()}
     </section>
   );
 };

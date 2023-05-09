@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^14.4.3",
     "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
     "framer-motion": "^10.12.8",
     "jquery": "^3.6.4",
     "popper.js": "^1.16.1",
