@@ -7,11 +7,12 @@ const Images = ({
 }) => (
   <>
     <div className={styles.imageContainer}>
-        <div className={styles.imageHeading}>
-      <h4>
-        Add images of the property:
-        <button type="button" onClick={() => onAdd()} className={styles.imageButton}><i className="bi bi-file-earmark-plus" /></button>
-      </h4></div>
+      <div className={styles.imageHeading}>
+        <h4>
+          Add images of the property:
+          <button type="button" onClick={() => onAdd()} className={styles.imageButton}><i className="bi bi-file-earmark-plus" /></button>
+        </h4>
+      </div>
       {form.images.map((image, index) => (
         <div key={index} className={styles.image_container}>
           <input

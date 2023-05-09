@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-// import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from 'react-redux';
 import style from './AddHome.module.css';
 import Images from './Images';
+import { addHome } from './addHomeSlice';
 
 const AddHome = () => {
   const formInputState = {
@@ -14,7 +15,8 @@ const AddHome = () => {
     images: [],
   };
   const [formInput, setformInput] = useState(formInputState);
-
+  const dispatch = useDispatch();
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setformInput({ ...formInput, [name]: value });
@@ -24,6 +26,19 @@ const AddHome = () => {
     e.preventDefault();
     console.log('Submitted');
     console.log(formInput);
+    const newHome = {
+      home_stay: {
+        name: formInput.name,
+        location: formInput.location,
+        description: formInput.description,
+        price: formInput.price,
+        no_of_rooms: formInput.no_of_rooms,
+        rating: formInput.rating,
+      },
+      images: formInput.images,
+    };
+
+    dispatch(addHome(newHome));
     setformInput(formInputState);
   };
 
