@@ -13,7 +13,7 @@ const AddHome = () => {
     rating: '',
     images: [],
   };
-  const [formInput, setformInput] = React.useState(formInputState);
+  const [formInput, setformInput] = useState(formInputState);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,7 +37,7 @@ const AddHome = () => {
     setformInput({ ...formInput, images });
   };
 
-  const handleImage = (e, index) => {
+  const handleImageChange = (e, index) => {
     const images = [...formInput.images];
     images[index] = e.target.value;
     setformInput({ ...formInput, images });
@@ -102,9 +102,9 @@ const AddHome = () => {
           form={formInput}
           onAdd={handleAdd}
           onRemove={handleRemove}
-          onChange={handleImage}
+          onChange={handleImageChange}
         />
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" className={style.submission} />
       </form>
     </>
   );

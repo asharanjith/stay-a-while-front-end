@@ -89,3 +89,32 @@
     opacity: 1;
 }
 
+.imageContainer{
+    width: 80%;
+    margin: 10px;
+    border-radius: 5px;
+    padding-left: 1rem;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    opacity: 1;
+}
+.imageContainer button{
+    width: 10%;
+    height: 100%;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    opacity: 1;
+    border:none !important;
+}
+
+.submission{
+    width: 80%;
+    height: 15%;
+    margin: 10px;
+    border-radius: 5px;
+    padding-left: 1rem;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    opacity: 1;
+}
+
