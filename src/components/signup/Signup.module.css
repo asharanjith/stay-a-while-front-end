@@ -18,3 +18,8 @@
   background-color: rgb(251, 25, 25);
   border-radius: 10px;
 }
+
+.signupContainer input {
+  width: 80%;
+  max-width: 300px;
+}

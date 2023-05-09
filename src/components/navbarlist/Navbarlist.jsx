@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { NavLink, Navigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { GiCrossedSabres } from 'react-icons/gi';
 import { useDispatch, useSelector } from 'react-redux';
@@ -83,7 +83,6 @@ export default function Navbarlist() {
       <div className={style.hamburger}>
         <RxHamburgerMenu onClick={showmenu} className={style.hamburgerIcon} />
       </div>
-      {login && <Navigate to="/" />}
     </nav>
   );
 }

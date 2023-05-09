@@ -29,3 +29,8 @@
   background-color: rgb(25, 251, 25);
   border-radius: 10px;
 }
+
+.loginContainer input {
+  width: 80%;
+  max-width: 300px;
+}

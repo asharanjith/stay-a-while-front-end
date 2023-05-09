@@ -47,7 +47,7 @@ export default function Signup() {
             <button className="btn bg-danger text-light" type="button" onClick={handleSubmit}>Sign Up</button>
             <div>
               <p> Already Registered?</p>
-              <Link to="/login">Login Here</Link>
+              <Link to="/">Login Here</Link>
             </div>
             <AnimatePresence>
               {error
@@ -67,7 +67,7 @@ export default function Signup() {
             </AnimatePresence>
           </>
         )}
-      {success && (<Navigate to="/login" />)}
+      {success && (<Navigate to="/" />)}
     </div>
   );
 }
