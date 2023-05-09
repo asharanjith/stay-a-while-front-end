@@ -8,13 +8,16 @@ const Images = ({
   <>
     <div className={styles.imageContainer}>
       <div className={styles.imageHeading}>
-        <h4>
-          Add images of the property:
-          <button type="button" onClick={() => onAdd()} className={styles.imageButton}><i className="bi bi-file-earmark-plus" /></button>
-        </h4>
+        <h5>
+          Add images of the property
+          <button type="button" onClick={() => onAdd()} className={styles.imageButton}>
+            {' '}
+            <i className="bi bi-file-earmark-plus" />
+          </button>
+        </h5>
       </div>
       {form.images.map((image, index) => (
-        <div key={index} className={styles.image_container}>
+        <div key={`image ${index + 1}`} className={styles.image_container}>
           <input
             type="text"
             name="image"
@@ -23,7 +26,10 @@ const Images = ({
             required
             placeholder="Image URL"
           />
-          <button type="button" onClick={() => onRemove(index)}><i className="bi bi-file-earmark-minus" /></button>
+          <button type="button" onClick={() => onRemove(index)}>
+            {' '}
+            <i className="bi bi-file-earmark-minus" />
+          </button>
         </div>
       ))}
     </div>
