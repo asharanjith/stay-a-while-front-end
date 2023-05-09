@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function DeleteHotel() {
+export default function DeleteHome() {
   return (
     <div>DeleteHotel</div>
   );

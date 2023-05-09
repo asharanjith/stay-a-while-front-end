@@ -5,8 +5,10 @@ import $ from 'jquery';
 import Popper from 'popper.js';
 /* eslint-enable */
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+
 
 import './index.css';
 import { Provider } from 'react-redux';
