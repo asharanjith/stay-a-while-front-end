@@ -35,8 +35,14 @@ export default function Login() {
   useEffect(() => {
     setTimeout(() => {
       setAlert(false);
-    }, 3000);
+    }, 5000);
   }, [alert]);
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setLoggedIn(true);
+    }
+  }, [setLoggedIn]);
 
   return (
     <div className={style.loginContainer}>
