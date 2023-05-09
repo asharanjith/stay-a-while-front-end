@@ -1,46 +1,234 @@
-# Getting Started with Create React App and Redux
+<a name="readme-top" align="center"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+<div align="center">
+  <h1>STAY A WHILE FRONT-END</h1>
+  <br/>
 
-## Available Scripts
+</div>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
 
-### `npm start`
+# 📗 Table of Contents
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+  - [🚀 Back-End Link](#back-end)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+<!-- - [🔭 Future Features](#future-features) -->
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!-- PROJECT DESCRIPTION -->
 
-### `npm test`
+# 🏡STAY A WHILE FRONT-END <a name="about-project"></a>
+Stay A While Frontend holds the front-end development source React-Redux app that allows users to reserve an apartment or home.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Built With <a name="built-with"></a>
 
-### `npm run build`
+### Tech Stack <a name="tech-stack"></a>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ul>
+</details>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://react.dev/">React-Redux</a></li>
+  </ul>
+</details>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
+  <summary>Database</summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
+  </ul>
+</details>
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<details>
+  <summary>Kanban Board</summary>
+  <ul>
+    <li><a href="https://github.com/users/asharanjith/projects/5/views/2">Project link</a></li>
+    <li>
+      <img src="./src/assets/images/kanban_board.png" alt="diagram"  height="auto" />
+    </li>
+    
+</li>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ </ul>
+</details>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<!-- Features -->
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Key Features <a name="key-features"></a>
+ - Single Page App
+ - Jest Unit Testing
+ - Redux
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- LIVE DEMO -->
+## 🚀 Live Demo <a name="live-demo"></a>
+[Stay-A-While](#)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Back-End Link <a name="back-end"></a>
+[Stay-A-While](https://github.com/asharanjith/stay-a-while-back-end)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+In order to run this project you need:
+
+In order to work on this project, you need to have the following dependencies installed:
+
+- <a href="https://nodejs.org/en">Node.js</a>
+
+### Setup
+In desired folder or directory in the CLI, run the command:
+
+```sh
+git clone git@github.com:asharanjith/stay-a-while-front-end.git
+```
+
+Navigate into the cloned folder or repository by running the command:
+```sh
+cd stay-a-while-front-end
+```
+
+If VsCode is your default code editor, run:
+```sh
+code .
+```
+
+You are all set up!
+### Install
+
+Install this project with:
+
+```sh
+ npm install
+``` 
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+npm start
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  npm test
+```
+ ### Deployment
+
+You can deploy this project using:
+
+```sh
+localhost:3000
+```  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+👤  **Asha S Vijayan**
+
+- GitHub: [@asharanjith](https://github.com/asharanjith)
+- Twitter: [@asha_cep](https://twitter.com/asha_cep)
+- LinkedIn: [asha-vijayan](www.linkedin.com/in/ashavijayan)
+
+👤 **Emmanuella Adu**
+
+- GitHub: [@elarhadu](https://github.com/elarhadu)
+- Twitter: [@elarh\_](https://twitter.com/elarh_)
+- LinkedIn: [Emmanuella Adu](https://linkedin.com/in/emmanuella-adu)
+
+👤 **Samuel Kyere**
+ - GitHub: [@githubhandle](https://github.com/admirerbrown)
+ - Twitter: [@twitterhandle](https://twitter.com/brown_admirer)
+ - LinkedIn: [LinkedIn](https://www.linkedin.com/in/samuel-ntow-kyere-5036741b4/)
+
+👤 **Rohit Bhatt**
+
+- GitHub: [@rbhatt1999](https://github.com/rbhatt1999)
+- Twitter: [@RohitBhatt](https://twitter.com/Rohit_Bhatt_)
+- LinkedIn: [Rohit Bhatt](https://www.linkedin.com/in/rohitbhatt-dev/)
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+- Create an interactive search bar that allows users to filter and sort results based on their preferences, such as location, price, and amenities.
+- Create user profiles that allow users to view and edit their personal information, saved searches, and favorite properties.
+- Create a messaging system that allows hosts and guests to communicate directly within the platform, making it easier to coordinate logistics and address any issues that may arise during a stay.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/asharanjith/stay-a-while-front-end/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project give us a ⭐
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+We would like to thank [Microverse](https://github.com/microverseinc) for this project inspiration.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
