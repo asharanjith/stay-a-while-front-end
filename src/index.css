@@ -26,7 +26,22 @@ code {
     monospace;
 }
 
-* {
+p,
+h1,
+h2,
+h3,
+ul,
+li,
+a,
+button,
+input,
+textarea,
+form,
+label,
+select,
+option,
+span,
+div {
   text-decoration: none;
   box-sizing: border-box;
   padding: 0;
