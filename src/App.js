@@ -8,12 +8,14 @@ import Reservation from './components/reservation/Reservation';
 import Detailed from './components/home/detailed/Detailed';
 import AddHome from './components/add_home/AddHome';
 import DeleteHome from './components/delete_home/DeleteHome';
+import Login from './components/login/Login';
 
 function App() {
   return (
     <div className="App">
       <Navbarlist />
       <Routes>
+        <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
         <Route path="/detailed/:id" element={<Detailed />} />
         <Route path="/booking" element={<Booking />} />
