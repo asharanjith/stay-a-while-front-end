@@ -16,7 +16,7 @@ const AddHome = () => {
   };
   const [formInput, setformInput] = useState(formInputState);
   const dispatch = useDispatch();
-  
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setformInput({ ...formInput, [name]: value });
@@ -24,8 +24,6 @@ const AddHome = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted');
-    console.log(formInput);
     const newHome = {
       home_stay: {
         name: formInput.name,
