@@ -66,6 +66,7 @@ const AddHome = () => {
           onChange={handleChange}
           required
           placeholder="Name of the property"
+          minLength={3}
         />
         <input
           type="text"
@@ -74,6 +75,7 @@ const AddHome = () => {
           onChange={handleChange}
           required
           placeholder="Location of the property"
+          minLength={3}
         />
         <input
           type="textarea"
@@ -82,6 +84,8 @@ const AddHome = () => {
           onChange={handleChange}
           required
           placeholder="Description of the property"
+          minLength={10}
+          maxLength={1000}
         />
         <input
           type="number"
@@ -90,6 +94,7 @@ const AddHome = () => {
           onChange={handleChange}
           required
           placeholder="Price per day"
+          min={1}
         />
         <input
           type="number"
@@ -98,6 +103,7 @@ const AddHome = () => {
           onChange={handleChange}
           required
           placeholder="Number of rooms"
+          min={1}
         />
         <select
           name="rating"
