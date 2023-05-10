@@ -11,7 +11,7 @@ const AddHome = () => {
     description: '',
     price: '',
     no_of_rooms: '',
-    rating: '',
+    rating: '1',
     images: [''],
   };
   const [formInput, setformInput] = useState(formInputState);
@@ -56,8 +56,8 @@ const AddHome = () => {
     setformInput({ ...formInput, images });
   };
 
-  const addHomeForm = () => (
-    <>
+  return (
+    <section id={style.add_home}>
       <form onSubmit={handleSubmit} className={style.form_container}>
         <input
           type="text"
@@ -84,7 +84,7 @@ const AddHome = () => {
           onChange={handleChange}
           required
           placeholder="Description of the property"
-          minLength={10}
+          minLength={3}
           maxLength={1000}
           rows="7"
           cols="60"
@@ -111,6 +111,7 @@ const AddHome = () => {
           name="rating"
           value={formInput.rating}
           onChange={handleChange}
+          defaultValue="1"
           required
         >
           <option value="1">1 star</option>
@@ -127,12 +128,6 @@ const AddHome = () => {
         />
         <input type="submit" value="Submit" className={style.submission} />
       </form>
-    </>
-  );
-
-  return (
-    <section id={style.add_home}>
-      {addHomeForm()}
     </section>
   );
 };

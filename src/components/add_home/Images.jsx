@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BsPlusCircleFill } from 'react-icons/bs';
+import { AiFillDelete } from 'react-icons/ai';
 import styles from './AddHome.module.css';
 
 const Images = ({
@@ -12,7 +14,7 @@ const Images = ({
           Add images of the property
           <button type="button" onClick={() => onAdd()} className={styles.imageButton}>
             {' '}
-            <i className="bi bi-file-earmark-plus" />
+            <BsPlusCircleFill />
           </button>
         </h5>
       </div>
@@ -28,7 +30,7 @@ const Images = ({
           />
           <button type="button" onClick={() => onRemove(index)}>
             {' '}
-            <i className="bi bi-file-earmark-minus" />
+            <AiFillDelete />
           </button>
         </div>
       ))}
