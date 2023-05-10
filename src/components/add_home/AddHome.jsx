@@ -12,7 +12,7 @@ const AddHome = () => {
     price: '',
     no_of_rooms: '',
     rating: '',
-    images: [],
+    images: [''],
   };
   const [formInput, setformInput] = useState(formInputState);
   const dispatch = useDispatch();
