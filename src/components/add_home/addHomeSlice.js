@@ -2,16 +2,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const initialState = {
-  isLoading: false,
+  loading: false,
   homeStayData: null,
   success: false,
   error: '',
   response: null,
 };
 
-export const addHome = createAsyncThunk('home/addHome', async (homeStayData) => {
+export const addHome = createAsyncThunk('home/addHome', async (homeStayData, thunkAPI) => {
   const postURL = 'http://127.0.0.1:3000/home_stays';
-  const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo5LCJleHAiOjE2ODM3MjU0NTd9.ul2mhxM_4RAALk5E2dIqqw-v4H2RVckiuiYGoAC9USM';
+  const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2ODM3OTc4ODJ9.wIAugPKDALaJtz6907aIRTgXt0p2sYkKvNAzXCMQubc';
   const requestContent = {
     method: 'POST',
     headers: {
@@ -19,12 +19,16 @@ export const addHome = createAsyncThunk('home/addHome', async (homeStayData) => 
       Authorization: `Bearer ${token}`,
     },
   };
-  const response = await axios.post(postURL, homeStayData, requestContent);
-  return response.data;
+  try {
+    const response = await axios.post(postURL, homeStayData, requestContent);
+    return response.data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue(error.response.data.error);
+  }
 });
 
 const addHomeSlice = createSlice({
-  name: 'home',
+  name: 'homeStayData',
   initialState,
   reducers: {
     // add reducers here
@@ -33,19 +37,19 @@ const addHomeSlice = createSlice({
     builder
       .addCase(addHome.pending, (state) => ({
         ...state,
-        isLoading: true,
+        loading: true,
       }))
       .addCase(addHome.fulfilled, (state, action) => ({
         ...state,
-        isLoading: false,
+        loading: false,
         success: true,
         response: action.payload,
       }))
       .addCase(addHome.rejected, (state, action) => ({
         ...state,
-        isLoading: false,
+        loading: false,
         success: false,
-        error: action.error.message,
+        error: action.payload,
       }));
   },
 });
