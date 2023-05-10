@@ -6,6 +6,27 @@
   height: 100vh;
 }
 
+.loader {
+  border: 16px solid #b6b6b6;
+  border-radius: 50%;
+  border-top: 16px solid #0cf80c;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @media (max-width: 768px) {
   .App {
     flex-direction: column;
