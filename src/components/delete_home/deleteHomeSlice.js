@@ -53,6 +53,22 @@ const deleteHomeSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(getHomeStays.pending, (state) => ({
+        ...state,
+        loading: true,
+      }))
+      .addCase(getHomeStays.fulfilled, (state, action) => ({
+        ...state,
+        loading: false,
+        success: true,
+        homeStayData: action.payload,
+      }))
+      .addCase(getHomeStays.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        success: false,
+        error: action.payload,
+      }))
       .addCase(deleteHome.pending, (state) => ({
         ...state,
         loading: true,
