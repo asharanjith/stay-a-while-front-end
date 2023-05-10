@@ -4,11 +4,14 @@ import './App.css';
 import Navbarlist from './components/navbarlist/Navbarlist';
 import Home from './components/home/Home';
 import Booking from './components/booking/Booking';
-import { fetchHomeStays } from './components/home/HomeSlice';
+import Reservation from './components/reservation/Reservation';
+import AddHome from './components/add_home/AddHome';
+import DeleteHome from './components/delete_home/DeleteHome';
+import Detailed from './components/home/detailed/Detailed';
+import './components/home/home.css';
 
 function App() {
   return (
-
     <div className="App">
       <Navbarlist />
       <Routes>

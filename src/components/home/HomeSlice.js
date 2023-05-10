@@ -5,13 +5,17 @@ const FETCH_HOME_STAYS = 'stayAwhile/FETCH_HOME_STAYS';
 
 const fetchHomeStays = createAsyncThunk(FETCH_HOME_STAYS, async () => {
   try {
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2ODM4MDY1MTZ9.UJ_Dp1WHMch2tm0ooNemiK-eaEzwDUKjbgpbeYobQHQ';
     const options = {
       method: 'GET',
       url: 'http://127.0.0.1:3000/home_stays',
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
     };
     const response = await axios.request(options);
-    const propertyList = response.data;
-    console.log(propertyList);
+    const responseData = response.data;
+    const propertyList = responseData.data.home_stays;
     return propertyList;
   } catch (error) {
     throw new Error('Failed to fetch home stays');
