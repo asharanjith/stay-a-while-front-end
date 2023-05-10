@@ -9,11 +9,11 @@ import { fetchHomeStays } from './HomeSlice';
 const Home = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // const token = localStorage.getItem('token');
+  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    dispatch(fetchHomeStays()); // modify to accept bearer token from localstorage
-  }, [dispatch]);
+    dispatch(fetchHomeStays(token));
+  }, [dispatch, token]);
 
   const homeStayList = useSelector((state) => state.home.listings);
   const errMsg = useSelector((state) => state.home.error);
@@ -23,7 +23,10 @@ const Home = () => {
   };
 
   const imgSlide = (homeStay) => (
-    <div id={`carouselExampleCaptions-${homeStay.id}`} className="carousel slide">
+    <div
+      id={`carouselExampleCaptions-${homeStay.id}`}
+      className="carousel slide"
+    >
       <div className="carousel-indicators">
         {homeStay.images.map((img, index) => (
           <button
@@ -39,13 +42,18 @@ const Home = () => {
       </div>
       <div className="carousel-inner">
         {homeStay.images.map((img, index) => (
-          <div key={uuidv4()} className={`carousel-item img-holder ${index === 0 ? 'active' : ''}`}>
+          <div
+            key={uuidv4()}
+            className={`carousel-item img-holder ${
+              index === 0 ? 'active' : ''
+            }`}
+          >
             <img
               src={img.url}
               className="d-block w-100 img-tag"
               alt={`Slide ${index + 1}`}
               onClick={() => handleClick(homeStay.id)}
-              onKeyDown={() => { }}
+              onKeyDown={() => {}}
             />
           </div>
         ))}
@@ -95,7 +103,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-
     );
   }
 
