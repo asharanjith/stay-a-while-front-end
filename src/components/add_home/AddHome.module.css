@@ -1,0 +1,158 @@
+#add_home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(90deg, rgb(79, 156, 79), #c7fe0250), url(../../assets/images/addHome.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 1%;
+}
+
+/*
+.add_home {
+
+} */
+
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 700px;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.form_container input {
+  width: 80%;
+  height: 15%;
+  margin: 10px;
+  border-radius: 5px;
+  padding-left: 1rem;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  opacity: 1;
+}
+
+.form_container input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.imageContainer input {
+  width: 70%;
+  height: 100%;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  opacity: 1;
+}
+
+.form_container input[type="submit"] {
+  width: 30%;
+  height: 15%;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  opacity: 1;
+  font-size: 1.4rem;
+  padding-right: 1rem;
+}
+
+.form_container input[type="submit"]:hover {
+  background-color: rgb(79, 156, 79);
+  color: white;
+  opacity: 1;
+}
+
+.form_container textarea {
+  width: 80%;
+  height: 20%;
+  margin: 10px;
+  border-radius: 5px;
+  padding-left: 1rem;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  opacity: 1;
+}
+
+.form_container textarea::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.form_container input:focus {
+  outline: none;
+}
+
+.form_container button {
+  width: 80%;
+  height: 15%;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  opacity: 1;
+}
+
+.imageContainer button {
+  width: 10%;
+  height: 100%;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  opacity: 1;
+  border: none !important;
+}
+
+.form_container button:hover {
+  background-color: rgb(79, 156, 79);
+  color: white;
+  opacity: 1;
+}
+
+.form_container button:focus {
+  outline: none;
+}
+
+.form_container select {
+  width: 80%;
+  height: 15%;
+  margin: 10px;
+  border-radius: 5px;
+  padding-left: 1rem;
+  background-color: rgb(12, 40, 10);
+  color: white;
+  opacity: 1;
+}
+
+.imageContainer {
+  width: 80%;
+  margin: 10px;
+  border-radius: 5px;
+  padding-left: 1rem;
+  background-color: rgb(17, 17, 17);
+  color: white;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .form_container input {
+    height: 7%;
+  }
+
+  .form_container select {
+    height: 7%;
+  }
+
+  .form_container input[type="submit"] {
+    height: 7%;
+  }
+}
