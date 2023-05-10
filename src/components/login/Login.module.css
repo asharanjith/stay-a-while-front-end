@@ -1,0 +1,36 @@
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  position: relative;
+  gap: 10px;
+}
+
+.alert {
+  position: absolute;
+  top: 10vh;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(251, 25, 25);
+  border-radius: 10px;
+}
+
+.success {
+  position: absolute;
+  top: 10vh;
+  font-size: 18px;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(25, 251, 25);
+  border-radius: 10px;
+}
+
+.loginContainer input {
+  width: 80%;
+  max-width: 300px;
+}
