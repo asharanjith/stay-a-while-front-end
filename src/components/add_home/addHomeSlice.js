@@ -11,7 +11,7 @@ const initialState = {
 
 export const addHome = createAsyncThunk('home/addHome', async (homeStayData, thunkAPI) => {
   const postURL = 'http://127.0.0.1:3000/home_stays';
-  const token = 'eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2ODM3OTc4ODJ9.wIAugPKDALaJtz6907aIRTgXt0p2sYkKvNAzXCMQubc';
+  const token = localStorage.getItem('token');
   const requestContent = {
     method: 'POST',
     headers: {
