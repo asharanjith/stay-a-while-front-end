@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function DeleteHome() {
-  return (
-    <div>DeleteHotel</div>
-  );
-}
+const DeleteHome = () => (
+  <section>
+    <h1>Delete Home</h1>
+  </section>
+);
+
+export default DeleteHome;
