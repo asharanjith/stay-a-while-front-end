@@ -4,7 +4,7 @@ import './App.css';
 import Navbarlist from './components/navbarlist/Navbarlist';
 import Home from './components/home/Home';
 import Booking from './components/booking/Booking';
-import Reservation from './components/reservation/Reservation';
+import Reservation from './components/reservation/Reservations';
 import Detailed from './components/home/detailed/Detailed';
 import AddHome from './components/add_home/AddHome';
 import DeleteHome from './components/delete_home/DeleteHome';
