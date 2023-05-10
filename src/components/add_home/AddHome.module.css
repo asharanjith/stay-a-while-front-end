@@ -21,7 +21,7 @@
     border: 1px solid black;
     border-radius: 10px;
     padding: 1rem;
-    max-width: 650px;
+    max-width: 700px;
     background-color: white;
     opacity: 0.5;
 }
@@ -52,11 +52,27 @@
     opacity: 1;
     font-size: 1.4rem;
     padding-right: 1rem;
-
 }
+
 
 .form_container input[type="submit"]:hover{
     background-color: rgb(79, 156, 79);
+    color: white;
+    opacity: 1;
+}
+
+.form_container textarea{
+    width: 80%;
+    height: 20%;
+    margin: 10px;
+    border-radius: 5px;
+    padding-left: 1rem;
+    background-color: rgb(17, 17, 17);
+    color: white;
+    opacity: 1;
+}
+
+.form_container textarea::placeholder{
     color: white;
     opacity: 1;
 }
@@ -83,17 +99,6 @@
 
 .form_container button:focus{
     outline: none;
-}
-
-.form_container textarea{
-    width: 80%;
-    height: 20%;
-    margin: 10px;
-    border-radius: 5px;
-    padding-left: 1rem;
-    background-color: rgb(17, 17, 17);
-    color: white;
-    opacity: 1;
 }
 
 .form_container select{

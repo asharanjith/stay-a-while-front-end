@@ -77,7 +77,7 @@ const AddHome = () => {
           placeholder="Location of the property"
           minLength={3}
         />
-        <input
+        <textarea
           type="textarea"
           name="description"
           value={formInput.description}
@@ -86,6 +86,8 @@ const AddHome = () => {
           placeholder="Description of the property"
           minLength={10}
           maxLength={1000}
+          rows="7"
+          cols="60"
         />
         <input
           type="number"
