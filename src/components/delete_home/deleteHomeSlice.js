@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const baseUrl = 'http://127.0.0.1:3000/home_stays';
 
-export const getHomeStays = createAsyncThunk('home/getHomeStays', async (my_home_stays = null, thunkAPI) => {
+export const getHomeStays = createAsyncThunk('home/getHomeStays', async (thunkAPI) => {
   const getURL = `${baseUrl}?my_home_stays=true`;
   const token = localStorage.getItem('token');
   const requestContent = {
@@ -61,7 +61,7 @@ const deleteHomeSlice = createSlice({
         ...state,
         loading: false,
         success: true,
-        homeStayData: action.payload.data,
+        homeStayData: action.payload.data.data.home_stays,
       }))
       .addCase(getHomeStays.rejected, (state, action) => ({
         ...state,

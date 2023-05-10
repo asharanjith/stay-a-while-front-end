@@ -7,14 +7,14 @@ const DeleteHome = () => {
   const { homeStayData, loading } = useSelector((state) => state.deleteHome);
 
   useEffect(() => {
-    dispatch(getHomeStays(true));
+    dispatch(getHomeStays());
   },
   [dispatch]);
-
+console.log(homeStayData);
   return (
     <div>
       {loading && <p>Loading...</p>}
-      {homeStayData && <p>{homeStayData.message}</p>}
+      {homeStayData && <p>{homeStayData}</p>}
     </div>
   );
 };
