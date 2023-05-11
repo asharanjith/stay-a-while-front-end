@@ -1,4 +1,5 @@
 .modal {
+  display: block;
   position: absolute;
   top: auto !important;
   left: auto !important;

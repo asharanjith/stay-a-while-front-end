@@ -9,15 +9,15 @@ const DeleteCard = ({ item }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
 
-  const handleDeleteClick = () => {
+  const handleDelete = () => {
     setIsModalOpen(true);
   };
 
-  const handleCancelClick = () => {
+  const handleCancel = () => {
     setIsModalOpen(false);
   };
 
-  const handleConfirmClick = () => {
+  const handleConfirm = () => {
     dispatch(deleteHomeId(item.id));
     setIsModalOpen(false);
   };
@@ -31,12 +31,12 @@ const DeleteCard = ({ item }) => {
         <button
           type="button"
           className="btn btn-danger"
-          onClick={handleDeleteClick}
+          onClick={handleDelete}
         >
           Delete Home
         </button>
       </div>
-      <Modal isOpen={isModalOpen} onCancel={handleCancelClick} onConfirm={handleConfirmClick} />
+      <Modal isOpen={isModalOpen} onCancel={handleCancel} onConfirm={handleConfirm} />
     </div>
   );
 };
