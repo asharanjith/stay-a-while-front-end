@@ -1,12 +1,16 @@
 .cardContainer {
   flex: 1;
   gap: 20px;
+  background: linear-gradient(90deg, rgb(79, 156, 79), #c7fe0250), url(../../assets/images/addHome.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .deleteCard {
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  opacity: 0.8;
 }
 
 .deleteCard .card-body {

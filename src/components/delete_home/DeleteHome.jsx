@@ -14,7 +14,7 @@ const DeleteHome = () => {
   [dispatch]);
 
   return (
-    <div className="d-flex  justify-content-center flex-wrap cardContainer mt-3">
+    <div className="d-flex  justify-content-center flex-wrap cardContainer pt-5">
       {loading && (
       <>
         <div className="loader align-self-center" />
@@ -25,7 +25,7 @@ const DeleteHome = () => {
           <DeleteCard item={item} key={item.id} />
         ))
       ) : (
-        <h1>No Home Stays added</h1>
+        <h1>No homes to display</h1>
       )}
     </div>
   );

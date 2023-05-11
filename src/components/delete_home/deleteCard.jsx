@@ -27,7 +27,7 @@ const DeleteCard = ({ item }) => {
       <img src={item.images.length > 0 && item.images[0].url} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{item.name}</h5>
-        <p className="card-text">{item.description}</p>
+        <p className="card-text">{item.location}</p>
         <button
           type="button"
           className="btn btn-danger"
@@ -45,7 +45,7 @@ DeleteCard.propTypes = {
   item: PropTypes.shape({
     id: PropTypes.number,
     name: PropTypes.string,
-    description: PropTypes.string,
+    location: PropTypes.string,
     images: PropTypes.arrayOf(
       PropTypes.shape({
         url: PropTypes.string,
