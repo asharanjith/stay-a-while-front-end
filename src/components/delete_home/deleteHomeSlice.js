@@ -9,29 +9,32 @@ export const getHomeStays = createAsyncThunk('home/getHomeStays', async (thunkAP
   const requestContent = {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
   };
   try {
-    return await axios.get(getURL, requestContent);
+    const respone = await axios.get(getURL, requestContent);
+    return respone.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.error);
   }
 });
 
-export const deleteHome = createAsyncThunk('home/deleteHome', async (homeStayId, thunkAPI) => {
+export const deleteHomeId = createAsyncThunk('home/deleteHomeId', async (homeStayId, thunkAPI) => {
+  console.log(homeStayId);
+  const deleteURL = `${baseUrl}/${homeStayId}`;
+  console.log(deleteURL);
   const token = localStorage.getItem('token');
+  console.log(token);
   const requestContent = {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,
     },
   };
   try {
-    const response = await axios.delete(`${baseUrl}/${homeStayId}`, requestContent);
-    return response.data;
+    await axios.delete(deleteURL, requestContent);
+    return homeStayId;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data.error);
   }
@@ -61,7 +64,7 @@ const deleteHomeSlice = createSlice({
         ...state,
         loading: false,
         success: true,
-        homeStayData: action.payload.data.data.home_stays,
+        homeStayData: action.payload.data.home_stays,
       }))
       .addCase(getHomeStays.rejected, (state, action) => ({
         ...state,
@@ -69,17 +72,17 @@ const deleteHomeSlice = createSlice({
         success: false,
         error: action.payload,
       }))
-      .addCase(deleteHome.pending, (state) => ({
+      .addCase(deleteHomeId.pending, (state) => ({
         ...state,
         loading: true,
       }))
-      .addCase(deleteHome.fulfilled, (state, action) => ({
+      .addCase(deleteHomeId.fulfilled, (state, action) => ({
         ...state,
         loading: false,
         success: true,
-        response: action.payload,
+        homeStayData: state.homeStayData.filter((homeStay) => homeStay.id !== action.payload),
       }))
-      .addCase(deleteHome.rejected, (state, action) => ({
+      .addCase(deleteHomeId.rejected, (state, action) => ({
         ...state,
         loading: false,
         success: false,
