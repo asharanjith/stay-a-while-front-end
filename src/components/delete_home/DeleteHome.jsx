@@ -15,8 +15,11 @@ const DeleteHome = () => {
 
   return (
     <div>
-      <h1>Delete Home</h1>
-      {loading && <h3>Loading...</h3>}
+      {loading && (
+      <>
+        <div className="loader" />
+      </>
+      )}
       {homeStayData.map((item) => (
         <DeleteCard key={item.id} item={item} />
       ))}
