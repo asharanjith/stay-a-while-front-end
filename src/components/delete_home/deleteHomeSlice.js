@@ -21,11 +21,8 @@ export const getHomeStays = createAsyncThunk('home/getHomeStays', async (thunkAP
 });
 
 export const deleteHomeId = createAsyncThunk('home/deleteHomeId', async (homeStayId, thunkAPI) => {
-  console.log(homeStayId);
   const deleteURL = `${baseUrl}/${homeStayId}`;
-  console.log(deleteURL);
   const token = localStorage.getItem('token');
-  console.log(token);
   const requestContent = {
     method: 'DELETE',
     headers: {
@@ -51,9 +48,7 @@ const initialState = {
 const deleteHomeSlice = createSlice({
   name: 'homeStayData',
   initialState,
-  reducers: {
-    // add reducers here
-  },
+  reducers: { },
   extraReducers: (builder) => {
     builder
       .addCase(getHomeStays.pending, (state) => ({
