@@ -12,6 +12,7 @@ import AddHome from './components/add_home/AddHome';
 import Login from './components/login/Login';
 import { loginset } from './components/login/loginSlicer';
 import Signup from './components/signup/Signup';
+import './components/home/home.css';
 
 function App() {
   const { login } = useSelector((state) => state.login);
