@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbarlist from './components/navbarlist/Navbarlist';
@@ -29,8 +29,9 @@ function App() {
       <Routes>
         {login ? (
           <>
-            <Route path="/" element={<Home />} />
-            <Route path="/detailed/:id" element={<Detailed />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/home/:id" element={<Detailed />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/reservation" element={<Reservation />} />
             <Route path="/add" element={<AddHome />} />
