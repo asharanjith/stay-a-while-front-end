@@ -24,7 +24,7 @@ const DeleteCard = ({ item }) => {
 
   return (
     <div className="card align-self-start deleteCard" style={{ width: '18rem' }}>
-      <img src={item.images.length > 0 && item.images[0].url} className="card-img-top" alt="..." />
+      <img src={item.images.length > 0 && item.images[0].url} className="card-img-top cardImage" alt="..." />
       <div className="card-body">
         <h5 className="card-title">{item.name}</h5>
         <p className="card-text">{item.location}</p>

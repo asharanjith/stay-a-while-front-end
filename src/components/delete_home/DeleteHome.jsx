@@ -17,7 +17,7 @@ const DeleteHome = () => {
     <div className="d-flex  justify-content-center flex-wrap cardContainer pt-5">
       {loading && (
       <>
-        <div className="loader align-self-center" />
+        <div className="loader align-self-center fixed-center-screen" />
       </>
       )}
       {homeStayData.length > 0 ? (
