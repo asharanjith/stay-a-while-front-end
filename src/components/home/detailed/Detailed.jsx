@@ -9,7 +9,7 @@ import { MdAttachMoney } from 'react-icons/md';
 import { fetchHomeStays } from '../HomeSlice';
 import style from './Detailed.module.css';
 
-export default function Detailed() {
+const Detailed = () => {
   const [index, setIndex] = useState(0);
   const { listings } = useSelector((state) => state.home);
   const [listing, setListing] = useState(null);
@@ -111,4 +111,6 @@ export default function Detailed() {
       </Link>
     </div>
   );
-}
+};
+
+export default Detailed;
