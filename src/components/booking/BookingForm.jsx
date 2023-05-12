@@ -61,6 +61,7 @@ export default function BookingForm({ onClose }) {
       <button
         onClick={() => onClose(true)}
         type="button"
+        className="btn"
         style={{ position: 'absolute', top: '10px', right: '10px' }}
       >
         <FaTimes />

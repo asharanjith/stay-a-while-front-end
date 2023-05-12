@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FcCalendar } from 'react-icons/fc';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import BookingForm from './BookingForm';
 import styles from './Booking.module.css';
 import { fetchHomeStays } from '../home/HomeSlice';
@@ -9,12 +10,16 @@ export default function Booking() {
   const [booking, setBooking] = useState(false);
   const homeStayList = useSelector((state) => state.home.listings);
   const dispatch = useDispatch();
+  const { id } = useParams();
   useEffect(() => {
     if (homeStayList.length === 0) {
       const token = localStorage.getItem('token');
       dispatch(fetchHomeStays(token));
     }
-  }, [dispatch, homeStayList]);
+    if (id) {
+      setBooking(true);
+    }
+  }, [dispatch, homeStayList, id]);
   return (
     <>
       <section className={styles.booking_section}>
@@ -47,17 +52,11 @@ export default function Booking() {
         {booking && (
         <div className="flex items-center justify-center w-full h-full absolute top-0 left-0 z-50">
           <div
-            className="bg-white p-6 rounded-lg shadow-lg"
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              maxWidth: '600px',
-            }}
+            className={styles.booking_form}
           >
             <BookingForm onClose={() => setBooking(false)} />
           </div>
+          <div className={styles.backdrop} />
         </div>
         )}
       </section>
