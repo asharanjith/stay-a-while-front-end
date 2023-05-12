@@ -10,7 +10,6 @@ export default function Reservation() {
   }
 
   const { reservation } = state;
-  console.log(state);
 
   return (
     <div>
