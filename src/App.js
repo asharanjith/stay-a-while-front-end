@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Navbarlist from './components/navbarlist/Navbarlist';
 import Home from './components/home/Home';
 import Booking from './components/booking/Booking';
-import Reservation from './components/reservation/Reservation';
+import Reservation from './components/reservation/Reservations';
 import Detailed from './components/home/detailed/Detailed';
 import DeleteHome from './components/delete_home/DeleteHome';
 import AddHome from './components/add_home/AddHome';
@@ -33,6 +33,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/home/:id" element={<Detailed />} />
             <Route path="/booking" element={<Booking />} />
+            <Route path="/booking/:id" element={<Booking />} />
             <Route path="/reservation" element={<Reservation />} />
             <Route path="/add" element={<AddHome />} />
             <Route path="/delete" element={<DeleteHome />} />
