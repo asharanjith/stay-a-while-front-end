@@ -1,5 +1,5 @@
 .img-holder {
-  height: 250px;
+  height: 150px;
 }
 
 .img-tag {
@@ -14,4 +14,8 @@
 
 .f_size {
   font-size: 18px;
+}
+
+.card-body {
+  padding: 10px;
 }

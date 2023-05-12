@@ -1,9 +1,9 @@
 .cardContainer {
   flex: 1;
   gap: 20px;
-  background: linear-gradient(90deg, rgb(79, 156, 79), #c7fe0250), url(../../assets/images/addHome.jpg);
+  background: linear-gradient(90deg, rgba(79, 156, 79, 0.412), #c7fe024f), url(../../assets/images/addHome.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
 }
 
