@@ -1,0 +1,52 @@
+.cardContainer {
+  flex: 1;
+  gap: 20px;
+  background: linear-gradient(90deg, rgb(79, 156, 79), #c7fe0250), url(../../assets/images/addHome.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.fixed-center-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.deleteCard {
+  border-radius: 10px;
+  background-color: white;
+  opacity: 0.8;
+}
+
+.cardImage {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.deleteCard .card-body {
+  padding: 20px;
+}
+
+.deleteCard .card-body .card-title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.deleteCard .card-body .card-text {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.deleteCard .card-body button {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}

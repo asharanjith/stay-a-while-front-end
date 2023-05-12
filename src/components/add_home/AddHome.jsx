@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import style from './AddHome.module.css';
 import Images from './Images';
 import { addHome } from './addHomeSlice';
 
 const AddHome = () => {
+  const navigate = useNavigate();
+
   const formInputState = {
     name: '',
     location: '',
@@ -38,6 +41,7 @@ const AddHome = () => {
 
     dispatch(addHome(newHome));
     setformInput(formInputState);
+    navigate('/');
   };
 
   const handleAdd = () => {
