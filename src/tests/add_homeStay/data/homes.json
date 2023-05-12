@@ -1,0 +1,251 @@
+{
+    "data": {
+      "home_stays": [
+        {
+          "id": 1,
+          "name": "Cottage by Maxwell",
+          "location": "Sao Paulo, Brazil",
+          "description": "A house, built of a wooden base, brick, and glass is surrounded by a green field of 5000 m2 where, over the last 20 years,  it has being planted various species of fruit trees and ornamental plants.",
+          "no_of_rooms": 3,
+          "rating": 3,
+          "price": 150,
+          "user_id": 1,
+          "created_at": "2023-05-10T09:34:51.593Z",
+          "updated_at": "2023-05-10T09:34:51.593Z",
+          "images": [
+            {
+              "id": 1,
+              "url": "https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 1,
+              "created_at": "2023-05-10T09:34:51.615Z",
+              "updated_at": "2023-05-10T09:34:51.615Z"
+            },
+            {
+              "id": 2,
+              "url": "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 1,
+              "created_at": "2023-05-10T09:34:51.622Z",
+              "updated_at": "2023-05-10T09:34:51.622Z"
+            },
+            {
+              "id": 3,
+              "url": "https://images.pexels.com/photos/2179214/pexels-photo-2179214.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 1,
+              "created_at": "2023-05-10T09:34:51.626Z",
+              "updated_at": "2023-05-10T09:34:51.626Z"
+            },
+            {
+              "id": 4,
+              "url": "https://images.pexels.com/photos/2346091/pexels-photo-2346091.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 1,
+              "created_at": "2023-05-10T09:34:51.630Z",
+              "updated_at": "2023-05-10T09:34:51.630Z"
+            },
+            {
+              "id": 5,
+              "url": "https://images.pexels.com/photos/1571450/pexels-photo-1571450.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 1,
+              "created_at": "2023-05-10T09:34:51.635Z",
+              "updated_at": "2023-05-10T09:34:51.635Z"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "name": "Stay with Jen",
+          "location": "Kuta Utara, Indonesia",
+          "description": "Beyond Bungalows is a chic and romantic accommodation located in the happenings of Canggu. The location offers the tranquil and traditional ambiance of Bali. Your bungalow is one of our 7 units. It comes with one 180cm*200cm king bed, 5 star mattress, high quality bed linen, an exotic outdoor shower area, a wardrobe, and it is equipped with AC and fan.",
+          "no_of_rooms": 3,
+          "rating": 4,
+          "price": 250,
+          "user_id": 1,
+          "created_at": "2023-05-10T09:34:51.640Z",
+          "updated_at": "2023-05-10T09:34:51.640Z",
+          "images": [
+            {
+              "id": 6,
+              "url": "https://images.pexels.com/photos/2360673/pexels-photo-2360673.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 2,
+              "created_at": "2023-05-10T09:34:51.644Z",
+              "updated_at": "2023-05-10T09:34:51.644Z"
+            },
+            {
+              "id": 7,
+              "url": "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 2,
+              "created_at": "2023-05-10T09:34:51.647Z",
+              "updated_at": "2023-05-10T09:34:51.647Z"
+            },
+            {
+              "id": 8,
+              "url": "https://images.pexels.com/photos/189333/pexels-photo-189333.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 2,
+              "created_at": "2023-05-10T09:34:51.650Z",
+              "updated_at": "2023-05-10T09:34:51.650Z"
+            },
+            {
+              "id": 9,
+              "url": "https://images.pexels.com/photos/1879061/pexels-photo-1879061.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 2,
+              "created_at": "2023-05-10T09:34:51.654Z",
+              "updated_at": "2023-05-10T09:34:51.654Z"
+            },
+            {
+              "id": 10,
+              "url": "https://images.pexels.com/photos/105934/pexels-photo-105934.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 2,
+              "created_at": "2023-05-10T09:34:51.657Z",
+              "updated_at": "2023-05-10T09:34:51.657Z"
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "name": "Home by Sam",
+          "location": "Mtskheta-Mtianeti, Georgia",
+          "description": "Peaceful Place, comfortable environment for relaxation.\nHuge Beautiful yard space, panoramic balcony views. separate from Cars noisy. comfortable kitchen and dinner place on the first floor. We have private 4 rooms for 12 guests. with private balconies. our house is renting also fully for families, couples, and friends. inside is new furniture, a comfortable space, and all technics of the kitchen and house. outside is barbecue space and equipment",
+          "no_of_rooms": 5,
+          "rating": 4,
+          "price": 175,
+          "user_id": 1,
+          "created_at": "2023-05-10T09:34:51.660Z",
+          "updated_at": "2023-05-10T09:34:51.660Z",
+          "images": [
+            {
+              "id": 11,
+              "url": "https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 3,
+              "created_at": "2023-05-10T09:34:51.665Z",
+              "updated_at": "2023-05-10T09:34:51.665Z"
+            },
+            {
+              "id": 12,
+              "url": "https://images.pexels.com/photos/2029731/pexels-photo-2029731.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 3,
+              "created_at": "2023-05-10T09:34:51.669Z",
+              "updated_at": "2023-05-10T09:34:51.669Z"
+            },
+            {
+              "id": 13,
+              "url": "https://images.pexels.com/photos/2988865/pexels-photo-2988865.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 3,
+              "created_at": "2023-05-10T09:34:51.672Z",
+              "updated_at": "2023-05-10T09:34:51.672Z"
+            },
+            {
+              "id": 14,
+              "url": "https://images.pexels.com/photos/4740488/pexels-photo-4740488.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 3,
+              "created_at": "2023-05-10T09:34:51.676Z",
+              "updated_at": "2023-05-10T09:34:51.676Z"
+            },
+            {
+              "id": 15,
+              "url": "https://images.pexels.com/photos/1571458/pexels-photo-1571458.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 3,
+              "created_at": "2023-05-10T09:34:51.680Z",
+              "updated_at": "2023-05-10T09:34:51.680Z"
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "name": "Condo by Alessi",
+          "location": "Milano, Italy",
+          "description": "Lovely room in a Victorian house with a delightful garden. In a quiet location, perfect for relaxing and enjoying Hackney, with green spaces, cafes, and restaurants. There is a new bathroom with a shower and skylight.The kitchen has a large fridge freezer, oven, and dishwasher.It is quiet yet close to the action.",
+          "no_of_rooms": 6,
+          "rating": 3,
+          "price": 375,
+          "user_id": 1,
+          "created_at": "2023-05-10T09:34:51.683Z",
+          "updated_at": "2023-05-10T09:34:51.683Z",
+          "images": [
+            {
+              "id": 16,
+              "url": "https://images.pexels.com/photos/1438832/pexels-photo-1438832.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 4,
+              "created_at": "2023-05-10T09:34:51.686Z",
+              "updated_at": "2023-05-10T09:34:51.686Z"
+            },
+            {
+              "id": 17,
+              "url": "https://images.pexels.com/photos/1648776/pexels-photo-1648776.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 4,
+              "created_at": "2023-05-10T09:34:51.690Z",
+              "updated_at": "2023-05-10T09:34:51.690Z"
+            },
+            {
+              "id": 18,
+              "url": "https://images.pexels.com/photos/3555618/pexels-photo-3555618.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 4,
+              "created_at": "2023-05-10T09:34:51.693Z",
+              "updated_at": "2023-05-10T09:34:51.693Z"
+            },
+            {
+              "id": 19,
+              "url": "https://images.pexels.com/photos/2029719/pexels-photo-2029719.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 4,
+              "created_at": "2023-05-10T09:34:51.697Z",
+              "updated_at": "2023-05-10T09:34:51.697Z"
+            },
+            {
+              "id": 20,
+              "url": "https://images.pexels.com/photos/271631/pexels-photo-271631.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 4,
+              "created_at": "2023-05-10T09:34:51.700Z",
+              "updated_at": "2023-05-10T09:34:51.700Z"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Garden Home by Mario",
+          "location": "Johannesburg, South Africa",
+          "description": "Central room above the city. The room is bright, has its own balcony (the perfect place to enjoy the sunset), and is well-suited for\nanyone looking for an affordable and decent place to stay. Guests will have access to the pool, outdoor dining and barbecue area, sports facility, and coin-operated laundry. Guests can reach me on my cell in case of emergencies.",
+          "no_of_rooms": 5,
+          "rating": 4,
+          "price": 400,
+          "user_id": 1,
+          "created_at": "2023-05-10T09:34:51.702Z",
+          "updated_at": "2023-05-10T09:34:51.702Z",
+          "images": [
+            {
+              "id": 21,
+              "url": "https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 5,
+              "created_at": "2023-05-10T09:34:51.706Z",
+              "updated_at": "2023-05-10T09:34:51.706Z"
+            },
+            {
+              "id": 22,
+              "url": "https://images.pexels.com/photos/3705529/pexels-photo-3705529.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 5,
+              "created_at": "2023-05-10T09:34:51.709Z",
+              "updated_at": "2023-05-10T09:34:51.709Z"
+            },
+            {
+              "id": 23,
+              "url": "https://images.pexels.com/photos/90317/pexels-photo-90317.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 5,
+              "created_at": "2023-05-10T09:34:51.711Z",
+              "updated_at": "2023-05-10T09:34:51.711Z"
+            },
+            {
+              "id": 24,
+              "url": "https://images.pexels.com/photos/1743229/pexels-photo-1743229.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 5,
+              "created_at": "2023-05-10T09:34:51.715Z",
+              "updated_at": "2023-05-10T09:34:51.715Z"
+            },
+            {
+              "id": 25,
+              "url": "https://images.pexels.com/photos/3316926/pexels-photo-3316926.jpeg?auto=compress&cs=tinysrgb&w=600",
+              "home_stay_id": 5,
+              "created_at": "2023-05-10T09:34:51.717Z",
+              "updated_at": "2023-05-10T09:34:51.717Z"
+            }
+          ]
+        }
+      ]
+    }
+  }
