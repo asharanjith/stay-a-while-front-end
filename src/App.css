@@ -7,6 +7,10 @@
   height: 100vh;
 }
 
+.g-custom {
+  gap: 10px;
+}
+
 .loader {
   border: 16px solid #b6b6b6;
   border-radius: 50%;

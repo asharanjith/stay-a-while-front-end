@@ -19,7 +19,7 @@ const Home = () => {
   const errMsg = useSelector((state) => state.home.error);
 
   const handleClick = (id) => {
-    navigate(`/detailed/${id}`);
+    navigate(`/home/${id}`);
   };
 
   const imgSlide = (homeStay) => (
