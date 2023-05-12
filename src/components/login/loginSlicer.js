@@ -10,7 +10,7 @@ export const loginRequest = createAsyncThunk(
 );
 
 const initialState = {
-  login: false,
+  login: null,
   token: null,
   error: false,
   loading: false,
