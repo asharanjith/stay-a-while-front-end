@@ -46,8 +46,7 @@ export default function Navbarlist() {
           </NavLink>
           <NavLink
             onClick={closemenu}
-            end
-            to="/booking"
+            to="booking"
             className={({ isActive }) => (isActive ? `${style.isActive}` : '')}
           >
             Booking

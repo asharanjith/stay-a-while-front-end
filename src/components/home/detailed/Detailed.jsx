@@ -98,7 +98,7 @@ export default function Detailed() {
                 </strong>
               </p>
             </div>
-            <Link to={`/reservation/${listing.id}`} className="btn bg-success text-light d-flex g-custom p-2">
+            <Link to={`/booking/${listing.id}`} className="btn bg-success text-light d-flex g-custom p-2">
               <BsLifePreserver className={style.wicon} />
               Book Now
             </Link>
