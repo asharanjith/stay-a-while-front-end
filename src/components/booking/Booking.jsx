@@ -1,96 +1,62 @@
-/* eslint-disable react/no-array-index-key */
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
-import { useNavigate } from 'react-router-dom';
+import { FcCalendar } from 'react-icons/fc';
+import BookingForm from './BookingForm';
+import styles from './Booking.module.css';
 
 export default function Booking() {
-  const [selectedProperty, setSelectedProperty] = useState('');
-  const [numberOfPersons, setNumberOfPersons] = useState('');
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
-  const [availableProperties] = useState([
-    { id: 1, name: 'Property 1' },
-    { id: 2, name: 'Property 2' },
-    { id: 3, name: 'Property 3' },
-  ]);
-
-  const [reservation, setReservation] = useState([]);
-
-  const navigate = useNavigate();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newReservation = {
-      property: selectedProperty,
-      numberOfPersons,
-      startDate: startDate.toDateString(),
-      endDate: endDate.toDateString(),
-    };
-    setReservation((prevState) => ([...prevState, newReservation]));
-    // navigate('/reservation', { state: { reservation } });
-    console.log(reservation)
-  };
+  const [booking, setBooking] = useState(false);
 
   return (
     <>
-      <div className="container mt-5">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="property">Property:</label>
-            <select
-              id="property"
-              className="form-control"
-              value={selectedProperty}
-              onChange={(e) => setSelectedProperty(e.target.value)}
-            >
-              <option value="">Select a property</option>
-              {availableProperties.map((property) => (
-                <option key={property.id} value={property.id}>
-                  {property.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div className="form-group">
-            <label htmlFor="numberOfPersons">Number of persons:</label>
-            <input
-              id="numberOfPersons"
-              type="number"
-              className="form-control"
-              value={numberOfPersons}
-              onChange={(e) => setNumberOfPersons(e.target.value)}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="startDate">Start date:</label>
-            <DatePicker
-              id="startDate"
-              className="form-control"
-              selected={startDate}
-              onChange={(date) => setStartDate(date)}
-              minDate={new Date()}
-              dateFormat="yyyy-MM-dd"
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="endDate">End date:</label>
-            <DatePicker
-              id="endDate"
-              className="form-control"
-              selected={endDate}
-              onChange={(date) => setEndDate(date)}
-              minDate={startDate || new Date()}
-              dateFormat="yyyy-MM-dd"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Confirm Reservation
-          </button>
-        </form>
-      </div>
+      <section className={styles.booking_section}>
+        <div className="booking">
+          <h1>Book A Home with Stay A While</h1>
+          <hr />
+        </div>
 
+        <p className={styles.welcome_message}>
+          Welcome to Stay A While, where we believe that every traveler
+          deserves a home away from home.
+
+          We pride ourselves on creating a homey feeling that sets us apart from
+          other vacation rental platforms.
+          Our hosts are dedicated to making your stay as comfortable and enjoyable as
+          possible, and are always available to assist you with any questions or concerns.
+
+          So why not book a stay with us and experience the comfort and warmth
+          of a home away from home?
+          We guarantee you won&apos;t be disappointed.
+        </p>
+
+        <span>
+          <button
+            type="submit"
+            onClick={() => setBooking(true)}
+            className={styles.booking_button}
+          >
+            <FcCalendar />
+            {' '}
+            <span>Book Now</span>
+          </button>
+        </span>
+
+        {booking && (
+        <div className="flex items-center justify-center w-full h-full absolute top-0 left-0 z-50">
+          <div
+            className="bg-white p-6 rounded-lg shadow-lg"
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              maxWidth: '600px',
+            }}
+          >
+            <BookingForm onClose={() => setBooking(false)} />
+          </div>
+        </div>
+        )}
+      </section>
     </>
   );
 }
