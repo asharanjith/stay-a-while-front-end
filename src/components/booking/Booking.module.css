@@ -1,0 +1,45 @@
+.booking_section {
+  --bg-image: url("https://e0.pxfuel.com/wallpapers/12/377/desktop-wallpaper-beautiful-houses-beautiful-mansion.jpg");
+  --bg-image-opacity: 0.3;
+
+  display: grid;
+  place-content: center;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+}
+
+.booking_section::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  background-image: var(--bg-image);
+  opacity: var(--bg-image-opacity);
+  background-size: cover;
+  background-position: center;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.welcome_message {
+  padding: 1.5rem;
+  margin: 2rem;
+  font-size: 24px;
+}
+
+.booking_button {
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  transition: all 0.3s ease;
+}
+
+.booking_button:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
