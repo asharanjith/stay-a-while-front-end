@@ -1,17 +1,13 @@
 .modal {
   display: block;
   position: absolute;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  bottom: auto !important;
+  top: 30px;
+  left: 30px;
   z-index: 1;
-  overflow: auto;
 }
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
