@@ -48,18 +48,20 @@ const DeleteHome = () => {
         )}
       </div>
       <ReactPaginate
-        previousLabel="Previous"
+        itemClass="pageitem"
+        linkClass="pagelink"
+        previousLabel="Prev"
         nextLabel="Next"
         pageCount={totalPages}
         onPageChange={handlePageChange}
         containerClassName="pagination justify-content-center"
-        pageClassName="page-item"
-        pageLinkClassName="page-link"
+        pageClassName="pageitem"
+        pageLinkClassName="pagelink"
         activeClassName="active"
-        previousClassName="page-item"
-        previousLinkClassName="page-link"
-        nextClassName="page-item"
-        nextLinkClassName="page-link"
+        previousClassName="pageitem"
+        previousLinkClassName="pagelink"
+        nextClassName="pageitem"
+        nextLinkClassName="pagelink"
       />
     </div>
   );
