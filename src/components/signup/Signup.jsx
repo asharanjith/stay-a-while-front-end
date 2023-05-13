@@ -43,9 +43,9 @@ export default function Signup() {
         ) : (
           <>
             <h1>Sign Up</h1>
-            <input type="text" value={username} onKeyDown={handleKeyDown} onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" value={username} onKeyDown={handleKeyDown} onChange={(e) => setUsername(e.target.value)} placeholder="Enter Username" />
             <button className="btn bg-danger text-light" type="button" onClick={handleSubmit}>Sign Up</button>
-            <div>
+            <div className={style.login}>
               <p> Already Registered?</p>
               <Link to="/">Login Here</Link>
             </div>
