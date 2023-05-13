@@ -47,11 +47,10 @@ export const createReservation = createAsyncThunk(CREATE_RESERVATION,
   });
 
 export const deleteReservation = createAsyncThunk(DELETE_RESERVATION,
-  async ({ token, reservationId }) => {
-    const deleteUrl = `${baseUrl}/${reservationId}`;
+  async ({ token, id }) => {
+    const deleteUrl = `${baseUrl}/${id}`;
     try {
       const options = {
-        method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,
         },

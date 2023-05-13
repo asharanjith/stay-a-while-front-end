@@ -41,11 +41,13 @@ function App() {
             <Route path="/delete" element={<DeleteHome />} />
           </>
         )}
-        {(login === false) && (
-        <>
-          <Route path="/register" element={<Signup />} />
-          <Route path="*" element={<Login />} />
-        </>
+        {(login === false) ? (
+          <>
+            <Route path="/register" element={<Signup />} />
+            <Route path="*" element={<Login />} />
+          </>
+        ) : (
+          <Route path="*" element={<div className="loader" />} />
         )}
       </Routes>
     </div>
