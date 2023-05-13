@@ -10,7 +10,7 @@ import Detailed from './components/home/detailed/Detailed';
 import DeleteHome from './components/delete_home/DeleteHome';
 import AddHome from './components/add_home/AddHome';
 import Login from './components/login/Login';
-import { loginset } from './components/login/loginSlicer';
+import { loginset, loginreset } from './components/login/loginSlicer';
 import Signup from './components/signup/Signup';
 import './components/home/home.css';
 
@@ -21,13 +21,15 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       dispatch(loginset(token));
+    } else {
+      dispatch(loginreset());
     }
   }, [dispatch]);
   return (
     <div className="App">
       <Navbarlist />
       <Routes>
-        {login ? (
+        {login && (
           <>
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
@@ -38,11 +40,14 @@ function App() {
             <Route path="/add" element={<AddHome />} />
             <Route path="/delete" element={<DeleteHome />} />
           </>
-        ) : (
+        )}
+        {(login === false) ? (
           <>
             <Route path="/register" element={<Signup />} />
             <Route path="*" element={<Login />} />
           </>
+        ) : (
+          <Route path="*" element={<div className="loader" />} />
         )}
       </Routes>
     </div>
