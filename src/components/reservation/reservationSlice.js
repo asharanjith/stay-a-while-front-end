@@ -4,23 +4,25 @@ import axios from 'axios';
 const LIST_RESERVATIONS = 'stayAWhile/list_reservations';
 const CREATE_RESERVATION = 'stayAWhile/create_reservation';
 const DELETE_RESERVATION = 'stayAWhile/delete_reservation';
-const baseUrl = 'http://127.0.0.1:3000/reservations';
+const baseUrl = 'http://localhost:3000/reservations';
 
 export const getListReservations = createAsyncThunk(LIST_RESERVATIONS, async (token) => {
   try {
     const options = {
-      method: 'GET',
-      url: baseUrl,
       headers: {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await axios.request(options);
+    const response = await axios.request(baseUrl, options);
     const responseData = response.data;
-    const reservationList = responseData.data.reservations;
-    return reservationList;
+    if (responseData.error) {
+      throw new Error(responseData.error);
+    } else {
+      const reservationList = responseData.data.reservation;
+      return reservationList;
+    }
   } catch (error) {
-    throw new Error('Failed to fetch reservations list');
+    return { error: error.message };
   }
 });
 
@@ -46,15 +48,15 @@ export const createReservation = createAsyncThunk(CREATE_RESERVATION,
 
 export const deleteReservation = createAsyncThunk(DELETE_RESERVATION,
   async ({ token, reservationId }) => {
+    const deleteUrl = `${baseUrl}/${reservationId}`;
     try {
       const options = {
         method: 'DELETE',
-        url: `${baseUrl}/${reservationId}`,
         headers: {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.request(options);
+      const response = await axios.delete(deleteUrl, options);
       const responseData = response.data;
       const deletedReservation = responseData.data;
       return deletedReservation;
@@ -73,42 +75,50 @@ const reservationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getListReservations.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(getListReservations.fulfilled, (state, action) => {
-        state.loading = false;
-        state.reservations = action.payload;
-      })
-      .addCase(getListReservations.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      })
-      .addCase(createReservation.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(createReservation.fulfilled, (state, action) => {
-        state.loading = false;
-        state.reservations.push(action.payload);
-      })
-      .addCase(createReservation.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      })
-      .addCase(deleteReservation.pending, (state) => {
-        state.loading = true;
-      })
-      .addCase(deleteReservation.fulfilled, (state, action) => {
-        state.loading = false;
-        state.reservations = state.reservations.filter(
-          (reservation) => reservation.id !== action.payload.id,
-        );
-      })
-      .addCase(deleteReservation.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message;
-      });
+      .addCase(getListReservations.pending, (state) => ({
+        ...state,
+        loading: true,
+      }))
+      .addCase(getListReservations.fulfilled, (state, action) => ({
+        ...state,
+        loading: false,
+        reservations: action.payload,
+      }))
+      .addCase(getListReservations.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        error: action.error.message,
+      }))
+      .addCase(createReservation.pending, (state) => ({
+        ...state,
+        loading: true,
+      }))
+      .addCase(createReservation.fulfilled, (state) => ({
+        ...state,
+        loading: false,
+      }))
+      .addCase(createReservation.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        error: action.error.message,
+      }))
+      .addCase(deleteReservation.pending, (state) => ({
+        ...state,
+        loading: true,
+      }))
+      .addCase(deleteReservation.fulfilled, (state, action) => ({
+        ...state,
+        loading: false,
+        reservations:
+          state.reservations.filter((reservation) => reservation.id !== action.payload.id),
+      }))
+      .addCase(deleteReservation.rejected, (state, action) => ({
+        ...state,
+        loading: false,
+        error: action.error.message,
+      }));
   },
+
 });
 
-export default reservationSlice;
+export default reservationSlice.reducer;
