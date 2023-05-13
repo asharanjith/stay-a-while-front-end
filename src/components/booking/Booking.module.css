@@ -21,6 +21,8 @@
   padding: 1.5rem;
   margin: 2rem;
   font-size: 24px;
+  background-color: rgba(41, 102, 40, 0.716);
+  border-radius: 20px;
 }
 
 .booking_button {
