@@ -48,3 +48,27 @@ div {
   margin: 0;
   list-style: none;
 }
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul.pagination li {
+  background-color: #c7fe024f;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ul.pagination li:hover {
+  background-color: #c7fe02;
+}
+
+ul.pagination li.active {
+  background-color: #c7fe02;
+}

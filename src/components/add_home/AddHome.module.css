@@ -5,9 +5,9 @@
   justify-content: center;
   flex: 1;
   height: 100vh;
-  background: linear-gradient(90deg, rgb(79, 156, 79), #c7fe0250), url(../../assets/images/addHome.jpg);
+  background: linear-gradient(90deg, rgba(79, 156, 79, 0.412), #c7fe024f), url(../../assets/images/addHome.jpg);
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   padding: 1% 0;
 }
@@ -43,7 +43,6 @@
 }
 
 .imageContainer input {
-  width: 70%;
   height: 100%;
   background-color: rgb(17, 17, 17);
   color: white;
@@ -140,14 +139,29 @@
 
 @media screen and (max-width: 768px) {
   .form_container input {
-    height: 7%;
+    height: 40px;
+    width: 100%;
   }
 
   .form_container select {
-    height: 7%;
+    height: 40px;
+    width: 100%;
   }
 
   .form_container input[type="submit"] {
-    height: 7%;
+    height: 40px;
+    width: 100%;
+  }
+
+  .form_container textarea {
+    height: 15%;
+    width: 100%;
+    margin: 0;
+  }
+
+  .imageContainer {
+    width: 100%;
+    margin: 0;
+    padding: 0;
   }
 }

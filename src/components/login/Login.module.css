@@ -6,6 +6,9 @@
   flex: 1;
   position: relative;
   gap: 10px;
+  background: linear-gradient(90deg, rgba(79, 156, 79, 0.671), #c7fe024f), url(../../assets/images/addHome.jpg);
+  background-size: cover;
+  background-position: top;
 }
 
 .alert {
@@ -33,4 +36,26 @@
 .loginContainer input {
   width: 80%;
   max-width: 300px;
+  height: 40px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.loginContainer h1,
+.loginContainer p {
+  color: #fff;
+  text-align: center;
+}
+
+.register {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loginContainer a {
+  color: red;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
 }

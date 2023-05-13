@@ -66,9 +66,9 @@ export default function Login() {
         ) : (
           <>
             <h1>Login</h1>
-            <input type="text" value={username} onKeyDown={handleKeyDown} onChange={(e) => setUsername(e.target.value)} />
+            <input type="text" value={username} onKeyDown={handleKeyDown} onChange={(e) => setUsername(e.target.value)} placeholder="Enter Username" />
             <button className="btn bg-primary text-light" type="button" onClick={handleSubmit}>Login</button>
-            <div>
+            <div className={style.register}>
               <p> Not Registered?</p>
               <Link to="/register">Register Here</Link>
             </div>

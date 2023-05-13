@@ -2,42 +2,84 @@
 
 exports[`DeleteHome should match screenshot 1`] = `
 <div
-  className="d-flex  justify-content-center flex-wrap cardContainer pt-5"
+  className="container"
 >
   <div
-    className="card align-self-start deleteCard"
-    style={
-      Object {
-        "width": "18rem",
-      }
-    }
+    className="cardContainer"
   >
-    <img
-      alt="..."
-      className="card-img-top cardImage"
-      src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600"
-    />
     <div
-      className="card-body"
+      className="card align-self-start deleteCard"
+      style={
+        Object {
+          "width": "18rem",
+        }
+      }
     >
-      <h5
-        className="card-title"
+      <img
+        alt="..."
+        className="card-img-top cardImage"
+        src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600"
+      />
+      <div
+        className="card-body"
       >
-        Cottage by Maxwell
-      </h5>
-      <p
-        className="card-text"
-      >
-        Sao Paulo, Brazil
-      </p>
-      <button
-        className="btn btn-danger"
-        onClick={[Function]}
-        type="button"
-      >
-        Delete Home
-      </button>
+        <h5
+          className="card-title"
+        >
+          Cottage by Maxwell
+        </h5>
+        <p
+          className="card-text"
+        >
+          Sao Paulo, Brazil
+        </p>
+        <button
+          className="btn btn-danger"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete Home
+        </button>
+      </div>
     </div>
   </div>
+  <ul
+    aria-label="Pagination"
+    className="pagination justify-content-center"
+    role="navigation"
+  >
+    <li
+      className="page-item disabled"
+    >
+      <a
+        aria-disabled="true"
+        aria-label="Previous page"
+        className="page-link "
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        rel="prev"
+        role="button"
+        tabIndex="-1"
+      >
+        Previous
+      </a>
+    </li>
+    <li
+      className="page-item"
+    >
+      <a
+        aria-disabled="false"
+        aria-label="Next page"
+        className="page-link"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        rel="next"
+        role="button"
+        tabIndex="0"
+      >
+        Next
+      </a>
+    </li>
+  </ul>
 </div>
 `;
