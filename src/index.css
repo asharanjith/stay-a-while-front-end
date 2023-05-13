@@ -54,9 +54,7 @@ ul {
   padding: 0;
 }
 
-
-ul.pagination li{
-  display:inline-block;
+ul.pagination li {
   background-color: #c7fe024f;
   border: none;
   border-radius: 50%;
@@ -67,11 +65,10 @@ ul.pagination li{
   justify-content: center;
 }
 
-ul.pagination li:hover{
+ul.pagination li:hover {
   background-color: #c7fe02;
 }
 
-ul.pagination li.active{
+ul.pagination li.active {
   background-color: #c7fe02;
 }
-
