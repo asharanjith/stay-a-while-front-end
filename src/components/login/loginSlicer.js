@@ -2,11 +2,11 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const loginRequest = createAsyncThunk(
-  'login/loginRequest', async (data) => {
+  'login/loginRequest',
+  async (data) => {
     const response = await axios.post('http://localhost:3000/login', data);
     return response.data;
   },
-
 );
 
 const initialState = {
@@ -14,6 +14,7 @@ const initialState = {
   token: null,
   error: false,
   loading: false,
+  username: false,
 };
 
 const loginSlice = createSlice({
@@ -32,6 +33,10 @@ const loginSlice = createSlice({
       const newState = { ...state, login: false, token: null };
       return newState;
     },
+    usernamereset: (state) => {
+      const newState = { ...state, username: null };
+      return newState;
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(loginRequest.pending, (state) => {
@@ -40,7 +45,11 @@ const loginSlice = createSlice({
     });
     builder.addCase(loginRequest.fulfilled, (state, action) => {
       const newState = {
-        ...state, loading: false, login: true, token: action.payload.token,
+        ...state,
+        loading: false,
+        login: true,
+        token: action.payload.token,
+        username: action.payload.user,
       };
       return newState;
     });
@@ -52,4 +61,9 @@ const loginSlice = createSlice({
 });
 
 export default loginSlice.reducer;
-export const { errorReset, loginset, loginreset } = loginSlice.actions;
+export const {
+  errorReset,
+  loginset,
+  loginreset,
+  usernamereset,
+} = loginSlice.actions;
