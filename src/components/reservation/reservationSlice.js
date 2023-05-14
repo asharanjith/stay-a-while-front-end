@@ -2,7 +2,6 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 const LIST_RESERVATIONS = 'stayAWhile/list_reservations';
-const CREATE_RESERVATION = 'stayAWhile/create_reservation';
 const DELETE_RESERVATION = 'stayAWhile/delete_reservation';
 const baseUrl = 'http://localhost:3000/reservations';
 
@@ -26,41 +25,24 @@ export const getListReservations = createAsyncThunk(LIST_RESERVATIONS, async (to
   }
 });
 
-export const createReservation = createAsyncThunk(CREATE_RESERVATION,
-  async ({ token, reservationData }) => {
-    try {
-      const options = {
-        method: 'POST',
-        url: baseUrl,
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        data: reservationData,
-      };
-      const response = await axios.request(options);
-      const responseData = response.data;
-      const createdReservation = responseData.data;
-      return createdReservation;
-    } catch (error) {
-      throw new Error('Failed to create reservation');
-    }
-  });
-
 export const deleteReservation = createAsyncThunk(DELETE_RESERVATION,
-  async ({ token, id }) => {
-    const deleteUrl = `${baseUrl}/${id}`;
+  async (payload) => {
+    const deleteUrl = `${baseUrl}/${payload.id}`;
     try {
       const options = {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${payload.token}`,
         },
       };
       const response = await axios.delete(deleteUrl, options);
       const responseData = response.data;
-      const deletedReservation = responseData.data;
-      return deletedReservation;
+      if (response.error) {
+        throw new Error(responseData.error);
+      } else {
+        return responseData;
+      }
     } catch (error) {
-      throw new Error('Failed to delete reservation');
+      return { error: error.message };
     }
   });
 
@@ -74,50 +56,33 @@ const reservationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(getListReservations.pending, (state) => ({
-        ...state,
-        loading: true,
-      }))
-      .addCase(getListReservations.fulfilled, (state, action) => ({
-        ...state,
-        loading: false,
-        reservations: action.payload,
-      }))
-      .addCase(getListReservations.rejected, (state, action) => ({
-        ...state,
-        loading: false,
-        error: action.error.message,
-      }))
-      .addCase(createReservation.pending, (state) => ({
-        ...state,
-        loading: true,
-      }))
-      .addCase(createReservation.fulfilled, (state) => ({
-        ...state,
-        loading: false,
-      }))
-      .addCase(createReservation.rejected, (state, action) => ({
-        ...state,
-        loading: false,
-        error: action.error.message,
-      }))
-      .addCase(deleteReservation.pending, (state) => ({
-        ...state,
-        loading: true,
-      }))
-      .addCase(deleteReservation.fulfilled, (state, action) => ({
-        ...state,
-        loading: false,
-        reservations:
-          state.reservations.filter((reservation) => reservation.id !== action.payload.id),
-      }))
-      .addCase(deleteReservation.rejected, (state, action) => ({
-        ...state,
-        loading: false,
-        error: action.error.message,
-      }));
+      .addCase(getListReservations.pending, (state) => {
+        const newState = { ...state, loading: true };
+        return newState;
+      })
+      .addCase(getListReservations.fulfilled, (state, action) => {
+        const newState = { ...state, loading: false, reservations: action.payload };
+        return newState;
+      })
+      .addCase(getListReservations.rejected, (state, action) => {
+        const newState = { ...state, loading: false, error: action.error };
+        return newState;
+      })
+      .addCase(deleteReservation.pending, (state) => {
+        const newState = { ...state, loading: true };
+        return newState;
+      })
+      .addCase(deleteReservation.fulfilled, (state, action) => {
+        const filteredReservations = state.reservations.filter(
+          (reservation) => reservation.id !== action.payload.id,
+        );
+        const newState = { ...state, loading: false, reservations: filteredReservations };
+        return newState;
+      })
+      .addCase(deleteReservation.rejected, (state, action) => {
+        const newState = { ...state, loading: false, error: action.error };
+        return newState;
+      });
   },
-
 });
-
 export default reservationSlice.reducer;
