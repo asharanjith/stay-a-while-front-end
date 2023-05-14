@@ -1,20 +1,25 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteReservation, getListReservations } from './reservationSlice';
+import './reservations.css';
 
 export default function Reservation() {
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
-  const reservations = useSelector((state) => state.reservation.reservations);
+  const { reservations } = useSelector((state) => state.reservation);
   useEffect(() => {
     dispatch(getListReservations(token));
-  }, [dispatch, token, reservations]);
-
+  }, [dispatch, token]);
   const handleDelete = async (reservationId) => {
-    console.log(reservationId); // check the value of reservationId
-    await dispatch(deleteReservation(token, reservationId));
-    // await console.log(dispatch(deleteReservation(reservationId, token)));
+    const payload = {
+      id: reservationId,
+      token,
+    };
+    dispatch(deleteReservation(payload));
   };
+
+  const homeStayList = useSelector((state) => state.home.listings);
 
   return (
     <div className="max-w-[1000px] m-auto">
@@ -25,31 +30,33 @@ export default function Reservation() {
           <p className="text-center text-gray-500">Go to the home page and book a home.</p>
         </div>
       ) : (
-        <div className="flex flex-row flex-wrap gap-5 md:flex-nowrap md:gap-0 md:flex-col w-full mb-12">
-          {
-              reservations && reservations.map((reservation) => (
-                <div key={reservation.id} className="flex md:flex-row md:w-full w-[310px] flex-col items-center justify-between m-auto shadow-md rounded-lg mb-4 md:m-5 md:h-[80px] px-[10px]">
-                  <div className="flex flex-row flex-wrap gap-12 ml-8 mt-5 mb-4 md:flex-row md:justify-between w-full md:mx-11">
-                    <div className="flex flex-col justify-center md:w-[200px]">
-                      <h1 className="text-md font-bold">{reservation.reservation_id}</h1>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <p className="text-sm text-gray-500">Start date</p>
-                      <h1 className="text-md font-bold">{reservation.start_date}</h1>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <p className="text-sm text-gray-500">End date</p>
-                      <h1 className="text-md font-bold">{reservation.end_date}</h1>
-                    </div>
-                    <div className="flex flex-col justify-center">
-                      <h1 className="text-md font-bold">
-                        {reservation.daily_rate}
-                        €
-                      </h1>
-                      <p className="text-sm text-gray-500">/day</p>
-                    </div>
+        <div>
+          {reservations && reservations.map((reservation) => {
+            const homeStay = homeStayList.find((h) => h.id === reservation.home_stay_id);
+            if (!homeStay) return null; // return early if home stay not found
+            return (
+              <div className="card-container" key={reservation.id}>
+                <div className="card">
+                  <div className="card__img">
+                    <img
+                      src={homeStay.images && homeStay.images.length > 0 && homeStay.images[0].url}
+                      alt={homeStay.name}
+                    />
                   </div>
-                  <div className="flex flex-col justify-center mb-[1rem]">
+                  <div className="card__descr-wrapper">
+                    <p className="card__title">
+                      {homeStay.name}
+                    </p>
+                    <p className="card__descr">
+                      <br />
+                      <span>
+                        {reservation.start_date}
+                        {' '}
+                        -
+                        {' '}
+                        {reservation.end_date}
+                      </span>
+                    </p>
                     <button
                       type="button"
                       className="bg-gray-100 text-[#313131] px-4 py-2 rounded-lg"
@@ -59,10 +66,31 @@ export default function Reservation() {
                     </button>
                   </div>
                 </div>
-              ))
-            }
+              </div>
+            );
+          })}
+
         </div>
       )}
     </div>
   );
 }
+
+Reservation.propTypes = {
+  reservation: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    location: PropTypes.string.isRequired,
+    start_date: PropTypes.string.isRequired,
+    end_date: PropTypes.string.isRequired,
+    home: PropTypes.shape({
+      price: PropTypes.number.isRequired,
+    }).isRequired,
+    images: PropTypes.arrayOf(
+      PropTypes.shape({
+        url: PropTypes.string.isRequired,
+      }),
+    ).isRequired,
+  }).isRequired,
+};
