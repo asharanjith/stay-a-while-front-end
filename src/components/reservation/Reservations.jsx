@@ -33,7 +33,7 @@ export default function Reservation() {
         <div>
           {reservations && reservations.map((reservation) => {
             const homeStay = homeStayList.find((h) => h.id === reservation.home_stay_id);
-            if (!homeStay) return null; // return early if home stay not found
+            if (!homeStay) return null;
             return (
               <div className="card-container" key={reservation.id}>
                 <div className="card">
@@ -59,7 +59,7 @@ export default function Reservation() {
                     </p>
                     <button
                       type="button"
-                      className="bg-gray-100 text-[#313131] px-4 py-2 rounded-lg"
+                      className="btn btn-danger text-[#313131] px-4 py-2 rounded-lg"
                       onClick={() => handleDelete(reservation.id)}
                     >
                       Cancel
