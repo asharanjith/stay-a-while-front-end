@@ -12,17 +12,25 @@ export default function BookingForm({ onClose }) {
   const [selectedProperty, setSelectedProperty] = useState('');
   const [numberOfPersons, setNumberOfPersons] = useState('');
   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(
+    new Date(startDate.getTime() + 24 * 60 * 60 * 1000),
+  );
   const dispatch = useDispatch();
   const [idv, setIdv] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
+
   useEffect(() => {
     if (id) {
       setIdv(true);
       setSelectedProperty(id);
     }
   }, [id]);
+
+  useEffect(() => {
+    setEndDate(new Date(startDate.getTime() + 24 * 60 * 60 * 1000));
+  }, [startDate]);
+
   const homeStayList = useSelector((state) => state.home.listings);
   const apiCall = async (reservation, token) => {
     const requestContent = {
@@ -32,7 +40,11 @@ export default function BookingForm({ onClose }) {
       },
     };
     try {
-      const response = await axios.post('http://localhost:3000/reservations', reservation, requestContent);
+      const response = await axios.post(
+        'http://localhost:3000/reservations',
+        reservation,
+        requestContent,
+      );
       if (response.status === 201) {
         navigate('/reservation');
       } else if (response.status === 500) {
@@ -74,14 +86,17 @@ export default function BookingForm({ onClose }) {
           placeholder="property"
           onChange={(e) => setSelectedProperty(e.target.value)}
           disabled={idv}
+          required
         >
-          <option value="">Select a property</option>
+          <option value="" disabled>
+            Select a property
+          </option>
           {homeStayList.length > 0
-              && homeStayList.map((property) => (
-                <option key={property.id} value={property.id}>
-                  {property.name}
-                </option>
-              ))}
+            && homeStayList.map((property) => (
+              <option key={property.id} value={property.id}>
+                {property.name}
+              </option>
+            ))}
         </select>
         <input
           id="numberOfPersons"
@@ -90,6 +105,7 @@ export default function BookingForm({ onClose }) {
           value={numberOfPersons}
           placeholder="Number of people"
           onChange={(e) => setNumberOfPersons(e.target.value)}
+          required
         />
         <DatePicker
           id="startDate"
@@ -106,7 +122,7 @@ export default function BookingForm({ onClose }) {
           placeholder="yyyy-MM-dd"
           selected={endDate}
           onChange={(date) => setEndDate(date)}
-          minDate={startDate || new Date()}
+          minDate={endDate}
           dateFormat="yyyy-MM-dd"
         />
         <button type="submit" className="btn btn-primary mb-3">
