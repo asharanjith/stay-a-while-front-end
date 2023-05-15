@@ -115,7 +115,6 @@ const AddHome = () => {
           name="rating"
           value={formInput.rating}
           onChange={handleChange}
-          defaultValue="1"
           required
         >
           <option value="1">1 star</option>

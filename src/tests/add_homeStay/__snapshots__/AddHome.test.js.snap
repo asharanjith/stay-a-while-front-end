@@ -57,7 +57,6 @@ exports[`AddHome should match snapshot 1`] = `
       value=""
     />
     <select
-      defaultValue="1"
       name="rating"
       onChange={[Function]}
       required={true}

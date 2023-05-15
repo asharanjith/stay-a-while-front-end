@@ -49,28 +49,28 @@ exports[`DeleteHome should match screenshot 1`] = `
     role="navigation"
   >
     <li
-      className="page-item disabled"
+      className="pageitem disabled"
     >
       <a
         aria-disabled="true"
         aria-label="Previous page"
-        className="page-link "
+        className="pagelink "
         onClick={[Function]}
         onKeyPress={[Function]}
         rel="prev"
         role="button"
         tabIndex="-1"
       >
-        Previous
+        Prev
       </a>
     </li>
     <li
-      className="page-item"
+      className="pageitem"
     >
       <a
         aria-disabled="false"
         aria-label="Next page"
-        className="page-link"
+        className="pagelink"
         onClick={[Function]}
         onKeyPress={[Function]}
         rel="next"
