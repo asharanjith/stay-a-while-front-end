@@ -8,7 +8,7 @@ import {
 import { configureStore } from '@reduxjs/toolkit';
 import axios from 'axios';
 import homestays from '../delete_homeStay/home_stays.json';
-import homeSlice, { fetchHomeStays } from '../../components/home/HomeSlice';
+import homeSlice from '../../components/home/HomeSlice';
 import Booking from '../../components/booking/Booking';
 
 jest.mock('axios');
@@ -31,9 +31,6 @@ describe('Booking', () => {
       data: {
         homeStayList: homestays.data.home_stays,
       },
-    });
-    await act(async () => {
-      store.dispatch(fetchHomeStays());
     });
 
     await act(async () => {

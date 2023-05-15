@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { render, act, screen } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
 import axios from 'axios';
-import deleteHomeSlice, { getHomeStays } from '../../components/delete_home/deleteHomeSlice';
+import deleteHomeSlice from '../../components/delete_home/deleteHomeSlice';
 import DeleteHome from '../../components/delete_home/DeleteHome';
 import homestays from './home_stays.json';
 
@@ -25,9 +25,6 @@ describe('DeleteHome', () => {
           home_stays: [homestays.data.home_stays[0]],
         },
       },
-    });
-    await act(async () => {
-      store.dispatch(getHomeStays());
     });
 
     await act(async () => {

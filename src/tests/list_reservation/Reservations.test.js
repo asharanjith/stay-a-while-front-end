@@ -4,12 +4,14 @@ import renderer from 'react-test-renderer';
 import { Provider, useSelector } from 'react-redux';
 import { render, act, screen } from '@testing-library/react';
 import { configureStore } from '@reduxjs/toolkit';
+import axios from 'axios';
 import reservationSlice, { getListReservations } from '../../components/reservation/reservationSlice';
 import Reservations from '../../components/reservation/Reservations';
 import reservations from './reservations.json';
 import homeSlice, { fetchHomeStays } from '../../components/home/HomeSlice';
 import homestays from '../delete_homeStay/home_stays.json';
 
+jest.mock('axios');
 jest.mock('react-redux', () => ({
   ...jest.requireActual('react-redux'),
   useSelector: jest.fn(),
@@ -24,11 +26,19 @@ const store = configureStore({
 
 describe('Reservations', () => {
   beforeEach(async () => {
+    axios.get.mockResolvedValue({
+      data: {
+        data: {
+          reservation: reservations.data.reservation,
+        },
+      },
+    });
     useSelector.mockImplementation((selectorFn) => selectorFn({
       reservation: { reservations: reservations.data.reservation },
       home: { listings: homestays.data.home_stays },
     }));
-    await act(async () => {
+
+    await act(() => {
       store.dispatch(getListReservations());
       store.dispatch(fetchHomeStays());
     });
