@@ -6,43 +6,31 @@ const DELETE_RESERVATION = 'stayAWhile/delete_reservation';
 const baseUrl = 'https://stay-a-while-api.onrender.com/reservations';
 
 export const getListReservations = createAsyncThunk(LIST_RESERVATIONS, async (token) => {
-  try {
-    const options = {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    };
-    const response = await axios.request(baseUrl, options);
-    const responseData = response.data;
-    if (responseData.error) {
-      throw new Error(responseData.error);
-    } else {
-      const reservationList = responseData.data.reservation;
-      return reservationList;
-    }
-  } catch (error) {
-    return { error: error.message };
-  }
+  const options = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+  const response = await axios.request(baseUrl, options);
+  const responseData = response.data;
+  const reservationList = responseData.data.reservation;
+  return reservationList;
 });
 
 export const deleteReservation = createAsyncThunk(DELETE_RESERVATION,
   async (payload) => {
     const deleteUrl = `${baseUrl}/${payload.id}`;
-    try {
-      const options = {
-        headers: {
-          Authorization: `Bearer ${payload.token}`,
-        },
-      };
-      const response = await axios.delete(deleteUrl, options);
-      const responseData = response.data;
-      if (response.error) {
-        throw new Error(responseData.error);
-      } else {
-        return responseData;
-      }
-    } catch (error) {
-      return { error: error.message };
+    const options = {
+      headers: {
+        Authorization: `Bearer ${payload.token}`,
+      },
+    };
+    const response = await axios.delete(deleteUrl, options);
+    const responseData = response.data;
+    if (response.error) {
+      throw new Error(responseData.error);
+    } else {
+      return responseData;
     }
   });
 
@@ -64,8 +52,8 @@ const reservationSlice = createSlice({
         const newState = { ...state, loading: false, reservations: action.payload };
         return newState;
       })
-      .addCase(getListReservations.rejected, (state, action) => {
-        const newState = { ...state, loading: false, error: action.error };
+      .addCase(getListReservations.rejected, (state) => {
+        const newState = { ...state, loading: false, error: true };
         return newState;
       })
       .addCase(deleteReservation.pending, (state) => {
@@ -79,8 +67,8 @@ const reservationSlice = createSlice({
         const newState = { ...state, loading: false, reservations: filteredReservations };
         return newState;
       })
-      .addCase(deleteReservation.rejected, (state, action) => {
-        const newState = { ...state, loading: false, error: action.error };
+      .addCase(deleteReservation.rejected, (state) => {
+        const newState = { ...state, loading: false, error: true };
         return newState;
       });
   },
