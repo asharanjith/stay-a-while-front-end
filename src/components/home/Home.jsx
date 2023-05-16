@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -51,9 +50,7 @@ const Home = () => {
               tabIndex={homeStay.id}
               className={style.card}
             >
-              <div className="card h-100">
-                <div className="card-body">
-                  {homeStay.images.length > 0
+              {homeStay.images.length > 0
                   && (
                   <img
                     className={style.image}
@@ -61,15 +58,15 @@ const Home = () => {
                     alt={homeStay.name}
                   />
                   )}
-                  <div className="d-flex justify-content-between mt-3">
-                    <h4 className="f_size">{homeStay.location}</h4>
-                    <h6 className="">
-                      <BsFillStarFill />
-                      {homeStay.rating}
-                    </h6>
-                  </div>
-                  <h5 className="hse_name">{homeStay.name}</h5>
+              <div className={style.cardBody}>
+                <div className="d-flex justify-content-between mt-3">
+                  <h4 className="f_size">{homeStay.location}</h4>
+                  <h6 className="">
+                    <BsFillStarFill />
+                    {homeStay.rating}
+                  </h6>
                 </div>
+                <h5 className="hse_name">{homeStay.name}</h5>
               </div>
             </div>
           ))}

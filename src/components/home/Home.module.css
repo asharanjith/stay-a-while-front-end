@@ -8,6 +8,8 @@
   background: linear-gradient(90deg, rgba(79, 156, 79, 0.412), #c7fe024f), url(../../assets/images/addHome.jpg);
   background-size: cover;
   background-position: top;
+  overflow-y: auto;
+  height: 100vh;
 }
 
 .container h4 {
@@ -18,7 +20,7 @@
   width: 100%;
   height: 150px;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
+  border-radius: 20px 20px 0 0;
 }
 
 .container h6 {
@@ -48,11 +50,20 @@
   max-width: 300px;
   height: 280px;
   cursor: pointer;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .card:hover {
-  border-radius: 10px;
   transform: scale(1.05);
   transition: transform 0.2s ease-in-out;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.545);
+}
+
+.cardBody {
+  flex: 0.8;
+  padding: 0 10px;
 }
