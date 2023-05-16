@@ -41,7 +41,7 @@ const AddHome = () => {
 
     dispatch(addHome(newHome));
     setformInput(formInputState);
-    navigate('/home_stays');
+    navigate('/home');
   };
 
   const handleAdd = () => {
