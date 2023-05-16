@@ -74,7 +74,7 @@ function App() {
             <Route path="*" element={<Login />} />
           </>
         ) : (
-          <Route path="*" element={<div className="loader" />} />
+          <Route path="*" element={<div />} />
         )}
       </Routes>
     </div>
