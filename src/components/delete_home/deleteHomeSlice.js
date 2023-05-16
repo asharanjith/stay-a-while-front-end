@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseUrl = 'http://127.0.0.1:3000/home_stays';
+const baseUrl = 'https://stay-a-while-api.onrender.com/home_stays';
 
 export const getHomeStays = createAsyncThunk('home/getHomeStays', async (thunkAPI) => {
   const getURL = `${baseUrl}?my_home_stays=true`;

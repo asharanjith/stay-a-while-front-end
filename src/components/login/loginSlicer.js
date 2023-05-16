@@ -4,7 +4,7 @@ import axios from 'axios';
 export const loginRequest = createAsyncThunk(
   'login/loginRequest',
   async (data) => {
-    const response = await axios.post('http://localhost:3000/login', data);
+    const response = await axios.post('https://stay-a-while-api.onrender.com/login', data);
     return response.data;
   },
 );

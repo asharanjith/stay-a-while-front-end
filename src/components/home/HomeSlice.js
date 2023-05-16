@@ -7,7 +7,7 @@ const fetchHomeStays = createAsyncThunk(FETCH_HOME_STAYS, async (token) => {
   try {
     const options = {
       method: 'GET',
-      url: 'http://127.0.0.1:3000/home_stays',
+      url: 'https://stay-a-while-api.onrender.com/home_stays',
       headers: {
         Authorization: `Bearer ${token}`,
       },

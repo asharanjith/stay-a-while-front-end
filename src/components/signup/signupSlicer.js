@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export const signupRequest = createAsyncThunk(
   'signup/signupRequest', async (data) => {
-    const response = await axios.post('http://localhost:3000/users', data);
+    const response = await axios.post('https://stay-a-while-api.onrender.com/users', data);
     return response.data;
   },
 );

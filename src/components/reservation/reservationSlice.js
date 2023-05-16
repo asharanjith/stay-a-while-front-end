@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const LIST_RESERVATIONS = 'stayAWhile/list_reservations';
 const DELETE_RESERVATION = 'stayAWhile/delete_reservation';
-const baseUrl = 'http://localhost:3000/reservations';
+const baseUrl = 'https://stay-a-while-api.onrender.com/reservations';
 
 export const getListReservations = createAsyncThunk(LIST_RESERVATIONS, async (token) => {
   try {

@@ -10,7 +10,7 @@ const initialState = {
 };
 
 export const addHome = createAsyncThunk('home/addHome', async (homeStayData, thunkAPI) => {
-  const postURL = 'http://127.0.0.1:3000/home_stays';
+  const postURL = 'https://stay-a-while-api.onrender.com/home_stays';
   const token = localStorage.getItem('token');
   const requestContent = {
     method: 'POST',

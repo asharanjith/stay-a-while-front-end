@@ -41,7 +41,7 @@ export default function BookingForm({ onClose }) {
     };
     try {
       const response = await axios.post(
-        'http://localhost:3000/reservations',
+        'https://stay-a-while-api.onrender.com/reservations',
         reservation,
         requestContent,
       );
