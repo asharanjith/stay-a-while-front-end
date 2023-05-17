@@ -72,7 +72,7 @@ Stay A While Frontend holds the front-end development source React-Redux app tha
   <ul>
     <li><a href="https://github.com/users/asharanjith/projects/5/views/2">Project link</a></li>
     <li>
-      <img src="./src/assets/images/kanban_board.png" alt="diagram"  height="auto" />
+      <img src="./src/assets/images/initial.png" alt="diagram"  height="auto" />
     </li>
     
 </li>
