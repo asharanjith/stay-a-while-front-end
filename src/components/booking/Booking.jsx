@@ -6,7 +6,7 @@ import BookingForm from './BookingForm';
 import styles from './Booking.module.css';
 import { fetchHomeStays } from '../home/HomeSlice';
 
-export default function Booking() {
+const Booking = () => {
   const [booking, setBooking] = useState(false);
   const homeStayList = useSelector((state) => state.home.listings);
   const dispatch = useDispatch();
@@ -62,4 +62,6 @@ export default function Booking() {
       </section>
     </>
   );
-}
+};
+
+export default Booking;

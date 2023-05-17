@@ -5,7 +5,7 @@ import { Link, Navigate } from 'react-router-dom';
 import style from './Signup.module.css';
 import { signupRequest, errorReset } from './signupSlicer';
 
-export default function Signup() {
+const Signup = () => {
   const [username, setUsername] = useState('');
   const { error, success, loading } = useSelector((state) => state.signup);
   const dispatch = useDispatch();
@@ -70,4 +70,6 @@ export default function Signup() {
       {success && (<Navigate to="/" />)}
     </div>
   );
-}
+};
+
+export default Signup;

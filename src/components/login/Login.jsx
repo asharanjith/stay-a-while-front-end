@@ -6,7 +6,7 @@ import style from './Login.module.css';
 import { loginRequest, errorReset } from './loginSlicer';
 import { successReset } from '../signup/signupSlicer';
 
-export default function Login() {
+const Login = () => {
   const [username, setUsername] = useState('');
   const { error, login, loading } = useSelector((state) => state.login);
   const { success } = useSelector((state) => state.signup);
@@ -93,4 +93,6 @@ export default function Login() {
       {login && <Navigate to="/" />}
     </div>
   );
-}
+};
+
+export default Login;

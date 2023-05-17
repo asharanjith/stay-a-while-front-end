@@ -19,7 +19,7 @@ import {
 import Signup from './components/signup/Signup';
 import './components/home/home.css';
 
-function App() {
+const App = () => {
   const { login, username } = useSelector((state) => state.login);
   const dispatch = useDispatch();
   useEffect(() => {
@@ -79,5 +79,6 @@ function App() {
       </Routes>
     </div>
   );
-}
+};
+
 export default App;
