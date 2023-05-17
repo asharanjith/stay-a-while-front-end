@@ -69,13 +69,12 @@ Stay A While Frontend holds the front-end development source React-Redux app tha
 
 <details>
   <summary>Kanban Board</summary>
+  We are a team of four [Asha](@asharanjith) , [Emmanuella](@elarhadu) , [Rohith](@rbhatt1999) and [Samuel](@admirerbrown).
   <ul>
     <li><a href="https://github.com/users/asharanjith/projects/5/views/2">Project link</a></li>
     <li>
       <img src="./src/assets/images/initial.png" alt="diagram"  height="auto" />
-    </li>
-    
-</li>
+    </li>   
 
  </ul>
 </details>
