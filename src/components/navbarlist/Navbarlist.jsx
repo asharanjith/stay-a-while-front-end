@@ -7,7 +7,7 @@ import style from './Navbarlist.module.css';
 import logo from '../../assets/images/logo.png';
 import { loginreset } from '../login/loginSlicer';
 
-export default function Navbarlist() {
+const Navbarlist = () => {
   const { token, login } = useSelector((state) => state.login);
   const dispatch = useDispatch();
 
@@ -82,4 +82,6 @@ export default function Navbarlist() {
       </div>
     </nav>
   );
-}
+};
+
+export default Navbarlist;
