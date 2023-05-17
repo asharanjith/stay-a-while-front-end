@@ -8,7 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import axios from 'axios';
 import { loginreset } from '../login/loginSlicer';
 
-export default function BookingForm({ onClose }) {
+const BookingForm = ({ onClose }) => {
   const [selectedProperty, setSelectedProperty] = useState('');
   const [numberOfPersons, setNumberOfPersons] = useState('');
   const [startDate, setStartDate] = useState(new Date());
@@ -131,7 +131,9 @@ export default function BookingForm({ onClose }) {
       </form>
     </div>
   );
-}
+};
 BookingForm.propTypes = {
   onClose: PropTypes.func.isRequired,
 };
+
+export default BookingForm;

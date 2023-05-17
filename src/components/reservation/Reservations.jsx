@@ -5,7 +5,7 @@ import { deleteReservation, getListReservations } from './reservationSlice';
 import styles from './Reservations.module.css';
 import { fetchHomeStays } from '../home/HomeSlice';
 
-export default function Reservation() {
+const Reservation = () => {
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
   const { reservations } = useSelector((state) => state.reservation);
@@ -131,4 +131,6 @@ export default function Reservation() {
       />
     </div>
   );
-}
+};
+
+export default Reservation;
