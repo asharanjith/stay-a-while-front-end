@@ -1,0 +1,40 @@
+.modal {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.modal-content .modal-header {
+  padding: 2px 16px;
+  color: white;
+  border-radius: 5px;
+}
+
+.modal-content .modal-body {
+  padding: 2px 16px;
+}
+
+.modal-content .modal-footer {
+  padding: 2px 16px;
+  color: white;
+  border-radius: 5px;
+}
+
+.modal-content .modal-footer button {
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}

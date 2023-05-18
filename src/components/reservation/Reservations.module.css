@@ -1,0 +1,78 @@
+.container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100vh;
+  overflow-y: auto;
+  background:
+    linear-gradient(90deg, rgba(79, 156, 79, 0.412), #c7fe024f),
+    url(../../assets/images/addHome.jpg);
+  background-size: cover;
+  background-position: top;
+  padding: 10px 30px;
+  gap: 10px;
+}
+
+.card_container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.card {
+  --font-color: #323232;
+  --bg-color: #e0e0e0;
+
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+  background: var(--bg-color);
+  box-shadow: -9px 9px 18px #5a5a5a;
+  display: flex;
+  flex-direction: column;
+  transition: 0.4s;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px 2px #5a5a5a;
+}
+
+.card__img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+
+.card__descr_wrapper {
+  height: 30%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card__title {
+  color: var(--font-color);
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.total_price {
+  color: #24b9aa;
+  font-size: 20px;
+  font-weight: 700;
+}

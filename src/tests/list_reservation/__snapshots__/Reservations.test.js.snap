@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservations should match screenshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="card_container"
+  >
+    <div>
+      <div
+        className="card"
+      >
+        <div
+          className="card__img"
+        >
+          <img
+            alt="Cottage by Maxwell"
+            src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600"
+          />
+        </div>
+        <div
+          className="card__descr_wrapper"
+        >
+          <h2
+            className="card__title"
+          >
+            Cottage by Maxwell
+          </h2>
+          <p
+            className="price"
+          >
+            <span
+              className="total_price"
+            >
+              $
+              1200
+            </span>
+             
+            |
+            <span
+              className="price_rate"
+            >
+              $
+              150
+               
+              per day
+            </span>
+          </p>
+          <p
+            className="card__descr"
+          >
+            <span>
+              2023-05-18
+               
+              -
+               
+              2023-05-26
+            </span>
+          </p>
+          <button
+            className="btn btn-danger px-4 py-2 rounded-lg"
+            onClick={[Function]}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div
+        className="card"
+      >
+        <div
+          className="card__img"
+        >
+          <img
+            alt="Home by Sam"
+            src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=600"
+          />
+        </div>
+        <div
+          className="card__descr_wrapper"
+        >
+          <h2
+            className="card__title"
+          >
+            Home by Sam
+          </h2>
+          <p
+            className="price"
+          >
+            <span
+              className="total_price"
+            >
+              $
+              1575
+            </span>
+             
+            |
+            <span
+              className="price_rate"
+            >
+              $
+              175
+               
+              per day
+            </span>
+          </p>
+          <p
+            className="card__descr"
+          >
+            <span>
+              2023-05-16
+               
+              -
+               
+              2023-05-25
+            </span>
+          </p>
+          <button
+            className="btn btn-danger px-4 py-2 rounded-lg"
+            onClick={[Function]}
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul
+    aria-label="Pagination"
+    className="pagination justify-content-center"
+    role="navigation"
+  >
+    <li
+      className="pageitem disabled"
+    >
+      <a
+        aria-disabled="true"
+        aria-label="Previous page"
+        className="pagelink "
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        rel="prev"
+        role="button"
+        tabIndex="-1"
+      >
+        Prev
+      </a>
+    </li>
+    <li
+      className="pageitem"
+    >
+      <a
+        aria-disabled="false"
+        aria-label="Next page"
+        className="pagelink"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        rel="next"
+        role="button"
+        tabIndex="0"
+      >
+        Next
+      </a>
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,79 @@
+.booking_section {
+  background: linear-gradient(90deg, rgba(79, 156, 79, 0.412), #c7fe024f), url(../../assets/images/addHome.jpg);
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+  flex: 1;
+}
+
+.booking_section h1,
+.booking_section p,
+.booking_section hr {
+  color: #fff;
+}
+
+.welcome_message {
+  padding: 1.5rem;
+  margin: 2rem;
+  font-size: 24px;
+  background-color: rgba(41, 102, 40, 0.716);
+  border-radius: 20px;
+}
+
+.booking_button {
+  font-size: 20px;
+  border-radius: 30px;
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  transition: all 0.3s ease;
+}
+
+.booking_button:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  background-color: rgba(255, 255, 255, 0.247);
+  backdrop-filter: blur(3px);
+}
+
+.booking_form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+  .booking_section h1 {
+    font-size: 1.5rem;
+  }
+
+  .booking_section p {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    margin: 0;
+  }
+}

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteHome should match screenshot 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="cardContainer"
+  >
+    <div
+      className="card align-self-start deleteCard"
+      style={
+        Object {
+          "width": "18rem",
+        }
+      }
+    >
+      <img
+        alt="..."
+        className="card-img-top cardImage"
+        src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600"
+      />
+      <div
+        className="card-body"
+      >
+        <h5
+          className="card-title"
+        >
+          Cottage by Maxwell
+        </h5>
+        <p
+          className="card-text"
+        >
+          Sao Paulo, Brazil
+        </p>
+        <button
+          className="btn btn-danger"
+          onClick={[Function]}
+          type="button"
+        >
+          Delete Home
+        </button>
+      </div>
+    </div>
+  </div>
+  <ul
+    aria-label="Pagination"
+    className="pagination justify-content-center"
+    role="navigation"
+  >
+    <li
+      className="pageitem disabled"
+    >
+      <a
+        aria-disabled="true"
+        aria-label="Previous page"
+        className="pagelink "
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        rel="prev"
+        role="button"
+        tabIndex="-1"
+      >
+        Prev
+      </a>
+    </li>
+    <li
+      className="pageitem"
+    >
+      <a
+        aria-disabled="false"
+        aria-label="Next page"
+        className="pagelink"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        rel="next"
+        role="button"
+        tabIndex="0"
+      >
+        Next
+      </a>
+    </li>
+  </ul>
+</div>
+`;
