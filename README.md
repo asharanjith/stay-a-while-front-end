@@ -19,6 +19,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Kanban Board](#kanban-board)
   - [🚀 Live Demo](#live-demo)
   - [🚀 Back-End Link](#back-end)
 - [💻 Getting Started](#getting-started)
@@ -66,19 +67,6 @@ Stay A While Frontend holds the front-end development source React-Redux app tha
   </ul>
 </details>
 
-
-<details>
-  <summary>Kanban Board</summary>  
-  <ul>
-    <li><a href="https://github.com/users/asharanjith/projects/5/views/2">Project link</a></li>
-    <li>
-      <img src="./src/assets/images/initial.png" alt="diagram"  height="auto" />
-    </li>
-    <li>We are a team of four members <a href="https://github.com/asharanjith">Asha </a>,
-    <a href="https://github.com/elarhadu">Emmanuella </a>,<a href="https://github.com/admirerbrown">Samuel </a> and <a href="https://github.com/rbhatt1999">Rohit</a> </li>   
- </ul>
-</details>
-
 <!-- Features -->
 
 ### Key Features <a name="key-features"></a>
@@ -88,6 +76,19 @@ Stay A While Frontend holds the front-end development source React-Redux app tha
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+<!-- KANBAN BOARD -->
+## 🚀 Kanban Board <a name="kanban-board"></a>
+
+We are a team of four members <a href="https://github.com/asharanjith">Asha </a>, <a href="https://github.com/elarhadu">Emmanuella </a>,<a href="https://github.com/admirerbrown">Samuel </a> and <a href="https://github.com/rbhatt1999">Rohit</a>
+
+[Project link](https://github.com/users/asharanjith/projects/5/views/2)
+
+
+Initial Kanban Board Status
+
+<img src="./src/assets/images/initial.png" alt="diagram"  height="auto" />
 
 <!-- LIVE DEMO -->
 ## 🚀 Live Demo <a name="live-demo"></a>
